@@ -1,0 +1,36 @@
+<!-- wp:template-part {"slug":"header","theme":"jat-meet-theme","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","align":"full","layout":{"type":"default"}} -->
+<main id="main-content" class="wp-block-group alignfull"><!-- wp:group {"align":"full","className":"jat-page-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull jat-page-hero"><!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:paragraph {"className":"jat-breadcrumb"} -->
+<p class="jat-breadcrumb"><a href="/">ホーム</a> ／ 検索結果</p>
+<!-- /wp:paragraph -->
+<!-- wp:query-title {"type":"search","fontSize":"2-xl"} /-->
+<!-- wp:search {"label":"サイト内検索","showLabel":false,"placeholder":"キーワードを入力","buttonText":"検索","buttonUseIcon":false} /--></div>
+<!-- /wp:group --></div>
+<!-- /wp:group -->
+
+<!-- wp:group {"align":"wide","className":"jat-content","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide jat-content"><!-- wp:query {"queryId":3,"query":{"perPage":10,"pages":0,"offset":0,"postType":"any","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"layout":{"type":"default"}} -->
+<div class="wp-block-query"><!-- wp:post-template -->
+<!-- wp:group {"className":"jat-card","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|md"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group jat-card" style="margin-bottom:var(--wp--preset--spacing--md)"><!-- wp:post-title {"isLink":true,"fontSize":"xl"} /-->
+<!-- wp:post-excerpt {"moreText":"詳しく見る","excerptLength":80} /--></div>
+<!-- /wp:group -->
+<!-- /wp:post-template -->
+<!-- wp:query-no-results -->
+<!-- wp:heading {"level":2,"fontSize":"xl"} --><h2 class="wp-block-heading has-xl-font-size">該当するページが見つかりませんでした。</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>入力した言葉を短くするか、別の言葉で検索してください。サービスに関するご相談はお問い合わせから承ります。</p><!-- /wp:paragraph -->
+<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/contact/">お問い合わせ</a></div><!-- /wp:button --></div><!-- /wp:buttons -->
+<!-- /wp:query-no-results -->
+<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"space-between"}} -->
+<!-- wp:query-pagination-previous {"label":"前のページ"} /-->
+<!-- wp:query-pagination-numbers /-->
+<!-- wp:query-pagination-next {"label":"次のページ"} /-->
+<!-- /wp:query-pagination --></div>
+<!-- /wp:query --></div>
+<!-- /wp:group --></main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","theme":"jat-meet-theme","tagName":"footer"} /-->
