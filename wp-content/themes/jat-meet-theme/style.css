@@ -216,7 +216,7 @@ a:hover { color: var(--jat-gold); }
   border-radius: 15px;
   font-size: 1.25rem;
 }
-.jat-card__number { color: var(--jat-gold); font-family: Georgia, serif; font-size: 2rem; font-style: italic; }
+.jat-card__number { color: #80601f; font-family: Georgia, serif; font-size: 2rem; font-style: italic; }
 .jat-card__link::after { position: absolute; inset: 0; content: ""; }
 .jat-card__arrow { display: inline-flex; gap: .5rem; align-items: center; margin-top: 1rem; color: var(--jat-navy-2); font-size: .875rem; font-weight: 800; }
 

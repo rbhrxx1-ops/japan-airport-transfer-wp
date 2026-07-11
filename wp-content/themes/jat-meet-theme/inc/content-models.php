@@ -182,11 +182,13 @@ function jat_meet_theme_register_content_models(): void
 add_action('init', 'jat_meet_theme_register_content_models');
 
 /**
- * Render structured FAQ entries grouped by their editorial topic.
+ * Return FAQ entries in the exact order used by both HTML and JSON-LD.
+ *
+ * @return WP_Post[]
  */
-function jat_meet_theme_render_faq_list(): string
+function jat_meet_theme_get_visible_faq_posts(): array
 {
-    $faqPosts = get_posts(
+    return get_posts(
         array(
             'post_type'      => 'jat_faq',
             'post_status'    => 'publish',
@@ -200,6 +202,14 @@ function jat_meet_theme_render_faq_list(): string
             'order'          => 'ASC',
         )
     );
+}
+
+/**
+ * Render structured FAQ entries grouped by their editorial topic.
+ */
+function jat_meet_theme_render_faq_list(): string
+{
+    $faqPosts = jat_meet_theme_get_visible_faq_posts();
 
     if (array() === $faqPosts) {
         return '<p>' . esc_html__('現在、よくあるご質問を準備しています。', 'jat-meet-theme') . '</p>';

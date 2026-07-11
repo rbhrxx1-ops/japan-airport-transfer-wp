@@ -12,6 +12,7 @@ if (! defined('ABSPATH')) {
 }
 
 require_once get_template_directory() . '/inc/content-models.php';
+require_once get_template_directory() . '/inc/seo.php';
 
 /**
  * Theme setup.
@@ -170,6 +171,22 @@ function jat_meet_theme_disable_emoji_assets(): void
     remove_action('admin_print_styles', 'print_emoji_styles');
 }
 add_action('init', 'jat_meet_theme_disable_emoji_assets');
+
+/**
+ * Provide a theme favicon until a WordPress site icon is configured.
+ */
+function jat_meet_theme_favicon(): void
+{
+    if (has_site_icon()) {
+        return;
+    }
+
+    printf(
+        '<link rel="icon" href="%s" type="image/svg+xml">' . "\n",
+        esc_url(get_template_directory_uri() . '/assets/images/favicon.svg')
+    );
+}
+add_action('wp_head', 'jat_meet_theme_favicon', 2);
 
 /**
  * Add an accessible skip link before the site header.

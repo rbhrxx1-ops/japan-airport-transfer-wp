@@ -31,6 +31,7 @@ vendor/
 dist/
 build/
 coverage/
+/reports/
 .phpunit.result.cache
 
 # IDE
