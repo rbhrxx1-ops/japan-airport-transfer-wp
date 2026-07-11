@@ -142,6 +142,10 @@ final class JAT_Reservation_API
             return $result;
         }
 
+        if (! $result['duplicate']) {
+            JAT_Reservation_Mailer::send_received((int) $result['id']);
+        }
+
         $message = $result['duplicate']
             ? '同じ内容のお申し込みを受け付けています。受付番号をご確認ください。'
             : 'お申し込みを受け付けました。担当者が内容を確認のうえご連絡します。';
