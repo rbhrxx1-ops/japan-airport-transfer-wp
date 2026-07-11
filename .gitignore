@@ -1,0 +1,47 @@
+# Secrets and environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+wp-config.php
+
+# Production exports, backups, uploads and personal data
+/backups/
+*.sql
+*.sql.gz
+*.wpress
+*.tar
+*.tar.gz
+*.zip
+/wp-content/uploads/
+/private/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Dependencies and build output
+node_modules/
+vendor/
+dist/
+build/
+coverage/
+.phpunit.result.cache
+
+# IDE
+.idea/
+.vscode/
+
+# WordPress core and third-party runtime directories
+/wordpress/
+/wp-admin/
+/wp-includes/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/litespeed/
+/wp-content/languages/
