@@ -258,7 +258,7 @@ function jat_meet_theme_sanitize_date(mixed $value): string
 function jat_meet_theme_sanitize_content_role(mixed $value): string
 {
     $value   = sanitize_key((string) $value);
-    $allowed = array('service', 'location', 'flow', 'price', 'company', 'corporate', 'contact', 'legal', 'reservation', 'general');
+    $allowed = array('service', 'location', 'flow', 'price', 'company', 'corporate', 'contact', 'legal', 'reservation', 'recruit', 'general');
 
     return in_array($value, $allowed, true) ? $value : 'general';
 }
@@ -316,6 +316,7 @@ function jat_meet_theme_render_editorial_meta_box(WP_Post $post): void
             'contact' => __('お問い合わせ', 'jat-meet-theme'),
             'legal' => __('法務', 'jat-meet-theme'),
             'reservation' => __('予約', 'jat-meet-theme'),
+            'recruit' => __('採用情報', 'jat-meet-theme'),
         );
         ?>
         <p>

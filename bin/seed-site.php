@@ -256,6 +256,26 @@ $legalDraft = static function (string $name): string {
         . '<!-- wp:list --><ul class="wp-block-list"><li>実際の会社・サービス・決済・取消条件との一致</li><li>個人情報の取得目的、保管期間、委託先、開示・削除手続き</li><li>お問い合わせ窓口と制定・改定日</li><li>日本語母語話者および必要な専門家による確認</li></ul><!-- /wp:list -->';
 };
 
+$recruit = <<<'HTML'
+<!-- wp:heading --><h2 class="wp-block-heading">募集職種・業務内容</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>羽田空港や東京駅をはじめとする主要な玄関口にて、インバウンドVIPのお客様を最初にお迎えし、車両への誘導や手荷物配送の手配など、ご移動の全行程をシームレスにサポートする「ミート＆グリート」業務を担っていただきます。</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2 class="wp-block-heading">求める人物像</h2><!-- /wp:heading -->
+<!-- wp:list --><ul class="wp-block-list"><!-- wp:list-item --><li>ホスピタリティ重視の方：お客様に寄り添った丁寧なコミュニケーションができる方。（日本語のみでも可）</li><!-- /wp:list-item --><!-- wp:list-item --><li>英語・多言語スキル：日常会話レベルの語学力（英語、中国語など）をお持ちの方は歓迎いたします。</li><!-- /wp:list-item --><!-- wp:list-item --><li>業界経験者優遇：空港業務、旅行添乗員、ハイヤー運転手、ホテルコンシェルジュなどの経験がある方。</li><!-- /wp:list-item --><!-- wp:list-item --><li>プロフェッショナルな意識：守秘義務を遵守し、常に身だしなみや立ち居振る舞いに気配りのできる方。</li><!-- /wp:list-item --></ul><!-- /wp:list -->
+<!-- wp:heading --><h2 class="wp-block-heading">暫定募集条件（※正式公開前に要確認）</h2><!-- /wp:heading -->
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-stripes jat-recruit-conditions"} --><figure class="wp-block-table is-style-stripes jat-recruit-conditions"><table><tbody>
+<tr><td><strong>勤務地</strong></td><td>東京国際羽田空港、東京都内駅周辺エリア</td></tr>
+<tr><td><strong>勤務時間</strong></td><td>シフト制（フライト・列車スケジュールに基づく変動あり）<br>※週1日から、または1日1シフトからのスポット勤務も相談可能</td></tr>
+<tr><td><strong>一般アルバイト給与</strong></td><td>基本時給 1,350～1,500円〜（経験・能力を考慮し決定）<br>①日勤帯（07:00-20:59）単価 1,500円<br>②深夜帯（21:00-06:59）単価 1,800円<br>※1シフト＝2時間単位から選択可能</td></tr>
+<tr><td><strong>シフトリーダー固定給</strong></td><td>A：早朝（04:00〜11:00） 17,500円<br>B：日勤（10:30〜17:30） 14,000円<br>C：夜勤（17:00〜24:00） 14,000円<br>※3シフト時間帯より選択 / 7時間（休憩1時間）</td></tr>
+<tr><td><strong>応募資格（一般）</strong></td><td>・日本語可、未経験可、学歴・経験不問<br>・基本的なパソコンスキル / 携帯電話でメールができる方<br>・スーツケースなどの積み込み作業ができる方（10kg～25kg）<br>・外国籍の方歓迎（N2レベル以上必須）</td></tr>
+<tr><td><strong>応募資格（リーダー）</strong></td><td>・日本語および英語＜必須＞<br>・実際のミート実務およびシフト内の一般アルバイトの調整やレポートなどの事務作業を担当</td></tr>
+<tr><td><strong>待遇・福利厚生</strong></td><td>・交通費全額支給（東京都外など上限あり、要事前相談）<br>・制服貸与なし（個人の上下黒スーツ着用）<br>・研修制度あり（接客マナーなど実務研修）<br>・雇用保険、労災保険、健康保険、厚生年金（※適用条件あり）</td></tr>
+<tr><td><strong>試用期間</strong></td><td>3か月</td></tr>
+</tbody></table></figure><!-- /wp:table -->
+<!-- wp:heading --><h2 class="wp-block-heading">応募方法</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>まずは本サイトのお問い合わせフォームより、ご希望の職種と勤務スタイルを添えてご連絡ください。選考の上、面接日程をご案内いたします。</p><!-- /wp:paragraph -->
+HTML;
+
 $pages = array(
     array('key' => 'home', 'slug' => 'home', 'title' => 'ホーム', 'excerpt' => '空港・駅でのお出迎えを、確実でスムーズに。', 'content' => '', 'order' => 0),
     array('key' => 'service', 'slug' => 'service', 'title' => 'サービス', 'excerpt' => '空港・駅のお迎え・お見送りサービス', 'content' => $serviceIndex, 'order' => 10),
@@ -276,6 +296,7 @@ $pages = array(
     array('key' => 'cases', 'slug' => 'cases', 'title' => '導入事例', 'excerpt' => '公開許諾済みの事例を準備しています。', 'content' => $cases, 'status' => 'draft', 'order' => 50),
     array('key' => 'faq', 'slug' => 'faq', 'title' => 'よくあるご質問', 'excerpt' => '予約・当日・料金・法人利用などのご質問。', 'content' => $faq, 'order' => 60),
     array('key' => 'corporate', 'slug' => 'corporate', 'title' => '法人のお客様', 'excerpt' => '企業、旅行会社、車両会社、団体の迎送をご相談いただけます。', 'content' => $corporate, 'order' => 70),
+    array('key' => 'recruit', 'slug' => 'recruit', 'title' => '採用情報', 'excerpt' => '日本全国の玄関口で、最高峰のホスピタリティを提供する「お迎えのスペシャリスト」を募集しています。', 'content' => $recruit, 'role' => 'recruit', 'status' => 'draft', 'order' => 75),
     array('key' => 'company', 'slug' => 'company', 'title' => '会社案内', 'excerpt' => 'Japan Airport Transfer の考え方と会社概要。', 'content' => $company, 'status' => 'draft', 'order' => 80),
     array('key' => 'contact', 'parent' => 'company', 'slug' => 'contact', 'title' => 'お問い合わせ', 'excerpt' => 'サービス内容や法人利用をご相談ください。', 'content' => $contact, 'status' => 'draft', 'order' => 81),
     array('key' => 'reservation', 'slug' => 'reservation', 'title' => 'オンライン申込', 'excerpt' => '五つの手順で必要事項をご入力ください。', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">サービス内容、旅客情報、サインボード、申請者・車両情報をご入力ください。送信時点では受付であり、予約確定ではありません。</p><!-- /wp:paragraph --><!-- wp:shortcode -->[jat_reservation_form]<!-- /wp:shortcode -->', 'order' => 90),
@@ -321,7 +342,7 @@ foreach ($pages as $page) {
     $pageId = jat_seed_page($page, $parentId);
     $pageIds[$page['key']] = $pageId;
 
-    update_post_meta($pageId, 'jat_content_role', $roleByKey[$page['key']] ?? 'general');
+    update_post_meta($pageId, 'jat_content_role', $page['role'] ?? ($roleByKey[$page['key']] ?? 'general'));
     update_post_meta($pageId, 'jat_sort_order', (int) ($page['order'] ?? 0));
 }
 
