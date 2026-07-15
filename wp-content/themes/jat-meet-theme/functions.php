@@ -173,7 +173,7 @@ function jat_meet_theme_disable_emoji_assets(): void
 add_action('init', 'jat_meet_theme_disable_emoji_assets');
 
 /**
- * Provide a theme favicon until a WordPress site icon is configured.
+ * Provide deterministic Meet & Link icons until a WordPress Site Icon is configured.
  */
 function jat_meet_theme_favicon(): void
 {
@@ -181,9 +181,17 @@ function jat_meet_theme_favicon(): void
         return;
     }
 
+    $brand_uri = get_template_directory_uri() . '/assets/images/brand/';
+
     printf(
-        '<link rel="icon" href="%s" type="image/svg+xml">' . "\n",
-        esc_url(get_template_directory_uri() . '/assets/images/favicon.svg')
+        '<link rel="icon" href="%1$s" type="image/png" sizes="32x32">' . "\n" .
+        '<link rel="icon" href="%2$s" type="image/png" sizes="192x192">' . "\n" .
+        '<link rel="icon" href="%3$s" type="image/png" sizes="512x512">' . "\n" .
+        '<link rel="apple-touch-icon" href="%4$s" sizes="180x180">' . "\n",
+        esc_url($brand_uri . 'meet-and-link-icon-32.png'),
+        esc_url($brand_uri . 'meet-and-link-icon-192.png'),
+        esc_url($brand_uri . 'meet-and-link-icon-512.png'),
+        esc_url($brand_uri . 'meet-and-link-icon-180.png')
     );
 }
 add_action('wp_head', 'jat_meet_theme_favicon', 2);

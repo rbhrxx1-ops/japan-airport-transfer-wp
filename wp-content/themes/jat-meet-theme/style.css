@@ -1,9 +1,9 @@
 /*
 Theme Name: JAT Meet Theme
 Theme URI: https://meetandgreet.jp/
-Author: Japan Airport Transfer
-Description: 空港・駅のミート＆センディングサービス専用ブロックテーマ。
-Version: 0.2.5
+Author: Meet & Link
+Description: 会議・来賓の送迎と出迎えに特化したブロックテーマ。
+Version: 0.3.0
 Requires at least: 6.8
 Tested up to: 7.0
 Requires PHP: 8.1
@@ -81,10 +81,12 @@ a:hover { color: var(--jat-gold); }
 }
 
 .jat-header__inner { min-height: 78px; }
-.jat-site-logo .custom-logo { width: auto; max-height: 42px; }
-.jat-wordmark { letter-spacing: .08em; line-height: 1.15; }
-.jat-wordmark strong { display: block; color: var(--jat-navy); font-size: 1rem; }
-.jat-wordmark small { display: block; margin-top: .15rem; color: var(--jat-muted); font-size: .65rem; letter-spacing: .16em; }
+.jat-site-brand { min-width: 0; }
+.jat-site-brand__link { display: inline-flex; flex-direction: column; align-items: flex-start; color: inherit; text-decoration: none; }
+.jat-site-brand__logo { display: block; width: clamp(210px, 21vw, 290px); max-width: 100%; height: auto; object-fit: contain; }
+.jat-site-brand__description { display: block; margin-top: .18rem; color: var(--jat-muted); font-size: .675rem; font-weight: 600; letter-spacing: .08em; line-height: 1.35; }
+.jat-site-brand--footer .jat-site-brand__logo { width: min(360px, 100%); }
+.jat-site-brand--footer .jat-site-brand__description { color: rgba(255,255,255,.72); }
 .jat-header .wp-block-navigation-item__content { padding: .65rem .35rem; }
 .jat-header .wp-block-navigation-item__content:hover { color: var(--jat-navy-2); }
 
@@ -396,7 +398,8 @@ body:has(.jat-recruit-page) .jat-mobile-actions { display: none; }
   body { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
   body:has(.jat-recruit-page) { padding-bottom: 0; }
   .jat-header .wp-block-buttons { display: none; }
-  .jat-wordmark small { display: none; }
+  .jat-site-brand--header .jat-site-brand__logo { width: min(225px, 67vw); }
+  .jat-site-brand--header .jat-site-brand__description { font-size: .625rem; letter-spacing: .05em; }
   .jat-hero { min-height: auto; }
   .jat-hero::after { width: 72vw; right: -35vw; top: 12%; }
   .jat-hero__inner { padding-top: 3.25rem; padding-bottom: 3.5rem; }

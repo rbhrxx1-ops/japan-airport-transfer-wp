@@ -28,7 +28,7 @@ function jat_meet_theme_has_seo_plugin(): bool
 function jat_meet_theme_meta_description(): string
 {
     if (is_front_page()) {
-        return '空港・駅でのお出迎え、サインボード対応、送迎動線のご案内を行うJapan Airport Transferのサービスサイトです。';
+        return 'Meet & Link（ミート＆リンク）は、会議・来賓の送迎と出迎え、サインボード対応、空港・駅からの移動をご案内します。';
     }
 
     if (is_singular()) {
@@ -176,10 +176,25 @@ function jat_meet_theme_schema_graph(): array
 
     $graph = array(
         array(
+            '@type'         => 'Organization',
+            '@id'           => home_url('/#organization'),
+            'name'          => 'Meet & Link',
+            'alternateName' => 'ミート＆リンク',
+            'url'           => home_url('/'),
+            'description'   => '会議・来賓の送迎と出迎え',
+            'logo'          => array(
+                '@type'  => 'ImageObject',
+                'url'    => get_template_directory_uri() . '/assets/images/brand/meet-and-link-icon-512.png',
+                'width'  => 512,
+                'height' => 512,
+            ),
+        ),
+        array(
             '@type'       => 'WebSite',
             '@id'         => home_url('/#website'),
             'url'         => home_url('/'),
             'name'        => get_bloginfo('name'),
+            'publisher'   => array('@id' => home_url('/#organization')),
             'inLanguage'  => 'ja-JP',
         ),
         array(
@@ -189,6 +204,7 @@ function jat_meet_theme_schema_graph(): array
             'name'       => html_entity_decode(wp_get_document_title(), ENT_QUOTES | ENT_HTML5, get_bloginfo('charset')),
             'description'=> jat_meet_theme_meta_description(),
             'isPartOf'   => array('@id' => home_url('/#website')),
+            'about'      => array('@id' => home_url('/#organization')),
             'inLanguage' => 'ja-JP',
         ),
     );

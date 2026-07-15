@@ -182,7 +182,10 @@ def main() -> int:
         except requests.RequestException as error:
             add_failure(failures, url, f"request failed: {error}")
             continue
-        for discovered in validate_page(url, response, failures, release_blockers):
+        effective_url = normalize(response.url)
+        if effective_url != url:
+            visited.add(effective_url)
+        for discovered in validate_page(effective_url, response, failures, release_blockers):
             if discovered not in visited:
                 queue.append(discovered)
 

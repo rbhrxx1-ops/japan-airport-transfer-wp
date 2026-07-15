@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: JAT Reservation
- * Description: Japan Airport Transfer の五段階お申し込みフォーム、受付 API、注文管理、通知およびプライバシー機能。
+ * Description: Meet & Link の五段階お申し込みフォーム、受付 API、注文管理、通知およびプライバシー機能。
  * Version: 0.2.0
  * Requires at least: 7.0
  * Requires PHP: 8.3
- * Author: Japan Airport Transfer
+ * Author: Meet & Link
  * Text Domain: jat-reservation
  */
 

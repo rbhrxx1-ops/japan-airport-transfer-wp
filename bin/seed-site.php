@@ -339,7 +339,7 @@ $pages = array(
     array('key' => 'faq', 'slug' => 'faq', 'title' => 'よくあるご質問', 'excerpt' => '予約・当日・料金・法人利用などのご質問。', 'content' => $faq, 'order' => 60),
     array('key' => 'corporate', 'slug' => 'corporate', 'title' => '法人のお客様', 'excerpt' => '企業、旅行会社、車両会社、団体の迎送をご相談いただけます。', 'content' => $corporate, 'order' => 70),
     array('key' => 'recruit', 'slug' => 'recruit', 'title' => '採用情報', 'excerpt' => '日本全国の玄関口で、最高峰のホスピタリティを提供する「お迎えのスペシャリスト」を募集しています。', 'content' => $recruit, 'role' => 'recruit', 'status' => 'publish', 'order' => 75),
-    array('key' => 'company', 'slug' => 'company', 'title' => '会社案内', 'excerpt' => 'Japan Airport Transfer の考え方と会社概要。', 'content' => $company, 'status' => 'draft', 'preserve_if_published' => true, 'order' => 80),
+    array('key' => 'company', 'slug' => 'company', 'title' => '会社案内', 'excerpt' => 'Meet & Link（ミート＆リンク）の考え方と会社概要。', 'content' => $company, 'status' => 'draft', 'preserve_if_published' => true, 'order' => 80),
     array('key' => 'contact', 'parent' => 'company', 'slug' => 'contact', 'title' => 'お問い合わせ', 'excerpt' => 'サービス内容や法人利用をご相談ください。', 'content' => $contact, 'status' => 'draft', 'preserve_if_published' => true, 'order' => 81),
     array('key' => 'reservation', 'slug' => 'reservation', 'title' => 'オンライン申込', 'excerpt' => '五つの手順で必要事項をご入力ください。', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">サービス内容、旅客情報、サインボード、申請者・車両情報をご入力ください。送信時点では受付であり、予約確定ではありません。</p><!-- /wp:paragraph --><!-- wp:shortcode -->[jat_reservation_form]<!-- /wp:shortcode -->', 'order' => 90),
     array('key' => 'reservation-complete', 'parent' => 'reservation', 'slug' => 'complete', 'title' => 'お申し込みを受け付けました', 'excerpt' => '', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">お申し込みありがとうございます。受付番号と内容確認のご案内をメールでお送りします。</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>この時点では予約確定ではありません。担当者が内容、人員、場所、料金を確認し、あらためてご連絡します。</p><!-- /wp:paragraph -->', 'order' => 91),
@@ -465,8 +465,8 @@ foreach ($seededFaqIds as $seededFaqId) {
 update_option('show_on_front', 'page');
 update_option('page_on_front', $pageIds['home']);
 update_option('page_for_posts', $pageIds['news']);
-update_option('blogname', 'Japan Airport Transfer');
-update_option('blogdescription', '空港・駅 ミート＆センディングサービス');
+update_option('blogname', 'Meet & Link');
+update_option('blogdescription', '会議・来賓の送迎と出迎え');
 update_option('timezone_string', 'Asia/Tokyo');
 update_option('date_format', 'Y年n月j日');
 update_option('time_format', 'H:i');

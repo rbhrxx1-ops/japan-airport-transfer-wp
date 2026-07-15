@@ -1,0 +1,93 @@
+{
+  "sources": {
+    "light": {
+      "path": "/home/ubuntu/upload/meet_and_link_logo_light.webp",
+      "sha256": "903be1f1469e9dfc90348b75961938d45da69d545ea530aaa6535d9297d9b489",
+      "size": [
+        2048,
+        1365
+      ],
+      "crop_box": [
+        179,
+        426,
+        1925,
+        873
+      ],
+      "background": [
+        252,
+        252,
+        252
+      ]
+    },
+    "dark": {
+      "path": "/home/ubuntu/upload/meet_and_link_logo_dark.webp",
+      "sha256": "607e5acefed77af0c549bb9822f93f3a16d9d1d17d1bf839d31b994d4911eab7",
+      "size": [
+        2048,
+        1365
+      ],
+      "crop_box": [
+        178,
+        427,
+        1924,
+        873
+      ],
+      "background": [
+        8,
+        30,
+        58
+      ]
+    }
+  },
+  "outputs": {
+    "meet-and-link-light.webp": {
+      "sha256": "ceda5347ac48d629b8839e607e39939b84a4de7a6e9eea17ea1d0af21e314c56",
+      "size": [
+        1746,
+        447
+      ],
+      "bytes": 40492
+    },
+    "meet-and-link-dark.webp": {
+      "sha256": "cc13e92b870ea3f046cd21af54ae9b8a22bc74e91ccee1901a28f11cfeadfb61",
+      "size": [
+        1746,
+        446
+      ],
+      "bytes": 41532
+    },
+    "meet-and-link-icon-32.png": {
+      "sha256": "90c7b5d2d0695b7d75f8d98472f0777a6e48b8cb96168520776629f05704649a",
+      "size": [
+        32,
+        32
+      ],
+      "bytes": 1656
+    },
+    "meet-and-link-icon-180.png": {
+      "sha256": "b4dd7e44664d525325849c0730caf3bd284bcb9d1d3be079666aab241f70496c",
+      "size": [
+        180,
+        180
+      ],
+      "bytes": 20240
+    },
+    "meet-and-link-icon-192.png": {
+      "sha256": "1b3b8c43a08c8d96540237d75886002e213ce62c01068e533b11d419d332535a",
+      "size": [
+        192,
+        192
+      ],
+      "bytes": 21958
+    },
+    "meet-and-link-icon-512.png": {
+      "sha256": "82881ef1a4761e807d4e08f8630372db6435748c77f7bfd671cc6a0bc7ad7054",
+      "size": [
+        512,
+        512
+      ],
+      "bytes": 90748
+    }
+  },
+  "icon_symbol_split_x": 461
+}

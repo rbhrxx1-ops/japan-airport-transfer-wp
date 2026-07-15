@@ -18,7 +18,7 @@ final class JAT_Reservation_Privacy
     public static function register_exporter(array $exporters): array
     {
         $exporters['jat-reservation'] = array(
-            'exporter_friendly_name' => 'Japan Airport Transfer お申し込みデータ',
+            'exporter_friendly_name' => 'Meet & Link お申し込みデータ',
             'callback' => array(self::class, 'export_personal_data'),
         );
         return $exporters;
@@ -27,7 +27,7 @@ final class JAT_Reservation_Privacy
     public static function register_eraser(array $erasers): array
     {
         $erasers['jat-reservation'] = array(
-            'eraser_friendly_name' => 'Japan Airport Transfer お申し込みデータ',
+            'eraser_friendly_name' => 'Meet & Link お申し込みデータ',
             'callback' => array(self::class, 'erase_personal_data'),
         );
         return $erasers;
@@ -39,7 +39,7 @@ final class JAT_Reservation_Privacy
             return;
         }
         wp_add_privacy_policy_content(
-            'Japan Airport Transfer 予約受付',
+            'Meet & Link 予約受付',
             wp_kses_post(
                 '<p>オンライン申込フォームでは、サービス提供、連絡、本人確認および法令上必要な記録のため、氏名、連絡先、行程、ご利用者情報、同意記録等を保存します。保存期間、共同利用、第三者提供、国外移転および削除条件は、公開前に承認済みのプライバシーポリシーへ反映してください。</p>'
             )
@@ -72,7 +72,7 @@ final class JAT_Reservation_Privacy
             );
             $data[] = array(
                 'group_id' => 'jat-reservation-orders',
-                'group_label' => 'Japan Airport Transfer お申し込み',
+                'group_label' => 'Meet & Link お申し込み',
                 'item_id' => 'jat-order-' . (int) $order['id'],
                 'data' => $fields,
             );

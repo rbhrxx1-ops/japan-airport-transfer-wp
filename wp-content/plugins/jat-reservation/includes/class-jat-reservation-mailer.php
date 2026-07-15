@@ -15,7 +15,7 @@ final class JAT_Reservation_Mailer
             return;
         }
 
-        $subject = '【Japan Airport Transfer】お申し込みを受け付けました（' . $order['public_id'] . '）';
+        $subject = '【Meet & Link】お申し込みを受け付けました（' . $order['public_id'] . '）';
         $body = self::customer_header($order)
             . "\nお申し込みを受け付けました。内容を確認後、担当者よりご案内します。\n"
             . "このメールは予約確定をお知らせするものではありません。\n\n"
@@ -51,7 +51,7 @@ final class JAT_Reservation_Mailer
         }
 
         [$title, $intro] = $templates[$status];
-        $subject = '【Japan Airport Transfer】' . $title . '（' . $order['public_id'] . '）';
+        $subject = '【Meet & Link】' . $title . '（' . $order['public_id'] . '）';
         $body = self::customer_header($order) . "\n{$intro}\n";
         if ($customer_message !== '') {
             $body .= "\n担当者からのご案内：\n" . sanitize_textarea_field($customer_message) . "\n";
@@ -79,7 +79,7 @@ final class JAT_Reservation_Mailer
     /** @param array<string,mixed> $order */
     private static function customer_header(array $order): string
     {
-        return (string) $order['applicant_name'] . " 様\n\nJapan Airport Transferをご利用いただき、ありがとうございます。\n";
+        return (string) $order['applicant_name'] . " 様\n\nMeet & Link（ミート＆リンク）をご利用いただき、ありがとうございます。\n";
     }
 
     /** @param array<string,mixed> $order */
