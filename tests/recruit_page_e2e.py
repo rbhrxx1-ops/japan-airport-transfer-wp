@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
-"""Local-only end-to-end checks for the draft recruitment page preview."""
+"""End-to-end checks for the published recruitment page."""
 
+import os
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-BASE_URL = "http://127.0.0.1:8080"
+BASE_URL = os.environ.get("SITE_BASE_URL", "http://127.0.0.1:8080").rstrip("/")
 RECRUIT_URL = f"{BASE_URL}/recruit/"
-SCREENSHOT_DIR = Path("/tmp/jat-recruit-e2e")
+SCREENSHOT_DIR = Path(os.environ.get("RECRUIT_SCREENSHOT_DIR", "/tmp/jat-recruit-e2e"))
 
 
 def assert_page(page, viewport_name: str) -> None:
-    page.goto(RECRUIT_URL, wait_until="networkidle")
+    response = page.goto(RECRUIT_URL, wait_until="networkidle")
+    assert response is not None and response.status == 200, response.status if response else "no response"
     assert page.title().startswith("採用情報"), page.title()
     assert page.locator("h1").inner_text().strip() == "採用情報"
 
@@ -29,12 +31,22 @@ def assert_page(page, viewport_name: str) -> None:
         assert text in body_text, f"{viewport_name}: missing {text}"
 
     assert page.locator("main.jat-recruit-page").count() == 1
-    contact_cta = page.locator('main a[href="/contact/"]')
+    contact_cta = page.locator('main a[href="/company/contact/"]')
     assert contact_cta.count() == 1
     assert contact_cta.inner_text().strip() == "採用について問い合わせる"
-    assert page.locator('header a[href="/recruit/"]').count() == 0
+    assert page.locator('main a[href="/contact/"]').count() == 0
+    header_recruit = page.locator('header a[href="/recruit/"]')
+    assert header_recruit.count() == 1
+    assert header_recruit.inner_text().strip() == "採用情報"
     assert page.locator('footer a[href="/recruit/"]').count() == 0
     if viewport_name == "mobile":
+        menu_button = page.locator("header .wp-block-navigation__responsive-container-open")
+        assert menu_button.count() == 1
+        menu_button.click()
+        assert header_recruit.is_visible()
+        close_button = page.locator("header .wp-block-navigation__responsive-container-close")
+        assert close_button.count() == 1
+        close_button.click()
         mobile_actions = page.locator(".jat-mobile-actions")
         assert mobile_actions.count() == 1
         assert mobile_actions.evaluate("el => getComputedStyle(el).display") == "none"

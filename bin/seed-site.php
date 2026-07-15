@@ -338,7 +338,7 @@ $pages = array(
     array('key' => 'cases', 'slug' => 'cases', 'title' => '導入事例', 'excerpt' => '公開許諾済みの事例を準備しています。', 'content' => $cases, 'status' => 'draft', 'order' => 50),
     array('key' => 'faq', 'slug' => 'faq', 'title' => 'よくあるご質問', 'excerpt' => '予約・当日・料金・法人利用などのご質問。', 'content' => $faq, 'order' => 60),
     array('key' => 'corporate', 'slug' => 'corporate', 'title' => '法人のお客様', 'excerpt' => '企業、旅行会社、車両会社、団体の迎送をご相談いただけます。', 'content' => $corporate, 'order' => 70),
-    array('key' => 'recruit', 'slug' => 'recruit', 'title' => '採用情報', 'excerpt' => '日本全国の玄関口で、最高峰のホスピタリティを提供する「お迎えのスペシャリスト」を募集しています。', 'content' => $recruit, 'role' => 'recruit', 'status' => 'draft', 'order' => 75),
+    array('key' => 'recruit', 'slug' => 'recruit', 'title' => '採用情報', 'excerpt' => '日本全国の玄関口で、最高峰のホスピタリティを提供する「お迎えのスペシャリスト」を募集しています。', 'content' => $recruit, 'role' => 'recruit', 'status' => 'publish', 'order' => 75),
     array('key' => 'company', 'slug' => 'company', 'title' => '会社案内', 'excerpt' => 'Japan Airport Transfer の考え方と会社概要。', 'content' => $company, 'status' => 'draft', 'preserve_if_published' => true, 'order' => 80),
     array('key' => 'contact', 'parent' => 'company', 'slug' => 'contact', 'title' => 'お問い合わせ', 'excerpt' => 'サービス内容や法人利用をご相談ください。', 'content' => $contact, 'status' => 'draft', 'preserve_if_published' => true, 'order' => 81),
     array('key' => 'reservation', 'slug' => 'reservation', 'title' => 'オンライン申込', 'excerpt' => '五つの手順で必要事項をご入力ください。', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">サービス内容、旅客情報、サインボード、申請者・車両情報をご入力ください。送信時点では受付であり、予約確定ではありません。</p><!-- /wp:paragraph --><!-- wp:shortcode -->[jat_reservation_form]<!-- /wp:shortcode -->', 'order' => 90),

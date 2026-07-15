@@ -32,6 +32,7 @@ EXPECTED_DRAFT_PATHS = frozenset(
         "/cancellation-policy/",
         "/legal/",
     }
+    | ({"/company/contact/"} if urlparse(BASE).hostname in {"127.0.0.1", "localhost"} else set())
 )
 
 

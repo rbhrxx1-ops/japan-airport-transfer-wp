@@ -1,0 +1,24 @@
+{
+  "url": "https://meetandgreet.jp/recruit/",
+  "title": "採用情報 – Japan Airport Transfer",
+  "viewport_width": 390,
+  "document_width": 375,
+  "body_width": 375,
+  "page_height": 3600,
+  "horizontal_overflow": false,
+  "recruit_links": [
+    {
+      "text": "採用情報",
+      "visible": false
+    }
+  ],
+  "cta_links": [
+    "/company/contact/"
+  ],
+  "heading": "採用情報",
+  "has_requirements_table": true,
+  "menu_opened": true,
+  "visible_recruit_link_after_menu_open": true,
+  "page_screenshot": "/home/ubuntu/japan-airport-transfer-wp/docs/screenshots/recruit-mobile-2026-07-16.png",
+  "menu_screenshot": "/home/ubuntu/japan-airport-transfer-wp/docs/screenshots/recruit-mobile-menu-2026-07-16.png"
+}
