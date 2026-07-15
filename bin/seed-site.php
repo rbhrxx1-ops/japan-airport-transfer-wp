@@ -26,6 +26,14 @@ function jat_seed_page(array $page, int $parentId = 0): int
         'no_found_rows'  => true,
     ));
     $existing = $existingPages[0] ?? null;
+    if (
+        ! empty($page['preserve_if_published'])
+        && $existing instanceof WP_Post
+        && $existing->post_status === 'publish'
+    ) {
+        return (int) $existing->ID;
+    }
+
     $payload  = array(
         'ID'           => $existing instanceof WP_Post ? $existing->ID : 0,
         'post_type'    => 'page',
@@ -124,7 +132,7 @@ function jat_location_content(string $summary, array $zones, array $meetMethods,
 }
 
 $serviceIndex = <<<'HTML'
-<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">空港・主要駅でのお迎えとお見送りを、事前確認から会合、車両・交通手段へのご案内まで一貫して支援します。</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">空港・主要駅でのお迎えとお見送りを、事前確認から会合、車両・交通手段へのご案内まで一貫して支援します。グリーター、手配済みの車両・乗務員、ご依頼元の情報をつなぎ、移動開始までの不確実さを減らします。</p><!-- /wp:paragraph -->
 <!-- wp:html --><div class="jat-grid jat-grid--2">
 <article class="jat-card"><span class="jat-card__number">01</span><h3>空港お迎え</h3><p>到着情報を確認し、到着ロビーでサインボードを掲げてお迎えします。</p><a class="jat-card__link" href="/service/airport-meet/" aria-label="空港お迎えの詳細"></a></article>
 <article class="jat-card"><span class="jat-card__number">02</span><h3>空港お見送り</h3><p>車寄せでのお迎えから、チェックイン、保安検査場入口までをご案内します。</p><a class="jat-card__link" href="/service/airport-sending/" aria-label="空港お見送りの詳細"></a></article>
@@ -132,47 +140,47 @@ $serviceIndex = <<<'HTML'
 <article class="jat-card"><span class="jat-card__number">04</span><h3>駅お見送り</h3><p>車寄せでのお迎えから、改札・ホーム・乗車までをご希望の範囲で支援します。</p><a class="jat-card__link" href="/service/station-sending/" aria-label="駅お見送りの詳細"></a></article>
 </div><!-- /wp:html -->
 <!-- wp:heading --><h2 class="wp-block-heading">個別相談サービス</h2><!-- /wp:heading -->
-<!-- wp:paragraph --><p>空港内の乗継、複数地点での同行、団体・複数便など、標準サービスに含まれない内容もご相談いただけます。対応可否と料金は、行程を確認してご案内します。</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>空港内の乗継、複数地点での同行、団体・複数便など、標準サービスに含まれない内容もご相談いただけます。お客様またはご依頼元が手配したハイヤー・タクシーとの連携を含め、対応可否と料金は行程を確認してご案内します。</p><!-- /wp:paragraph -->
 HTML;
 
 $areaIndex = <<<'HTML'
-<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">羽田空港、成田空港、東京駅、品川駅を中心に、到着・出発時の会合と移動を支援します。</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">羽田空港、成田空港、東京駅、品川駅をコア対応地点として、到着・出発時の会合と移動を支援します。</p><!-- /wp:paragraph -->
 <!-- wp:html --><div class="jat-grid jat-grid--4">
 <article class="jat-location"><span class="jat-location__code">HND</span><h3>羽田空港</h3><p>第1・第2・第3ターミナル</p><a class="jat-card__link" href="/area/haneda-airport/" aria-label="羽田空港の詳細"></a></article>
 <article class="jat-location"><span class="jat-location__code">NRT</span><h3>成田空港</h3><p>第1・第2・第3ターミナル</p><a class="jat-card__link" href="/area/narita-airport/" aria-label="成田空港の詳細"></a></article>
 <article class="jat-location"><span class="jat-location__code">TYO</span><h3>東京駅</h3><p>新幹線ホーム・主要改札・車寄せ</p><a class="jat-card__link" href="/area/tokyo-station/" aria-label="東京駅の詳細"></a></article>
 <article class="jat-location"><span class="jat-location__code">SGW</span><h3>品川駅</h3><p>新幹線ホーム・改札・車寄せ</p><a class="jat-card__link" href="/area/shinagawa-station/" aria-label="品川駅の詳細"></a></article>
 </div><!-- /wp:html -->
-<!-- wp:heading --><h2 class="wp-block-heading">その他の空港・駅</h2><!-- /wp:heading -->
-<!-- wp:paragraph --><p>上記以外の空港・駅も、日時、人数、行程、必要な支援内容を伺い、対応可否を個別に確認します。</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2 class="wp-block-heading">日本国内・アジアのその他の空港・駅</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>コア対応地点以外の日本国内およびアジアの空港・駅は、日時、人数、行程、必要な支援内容を伺い、ネットワークを確認したうえで対応可否を個別にご案内します。すべての地域での対応を保証するものではありません。</p><!-- /wp:paragraph -->
 HTML;
 
 $flow = <<<'HTML'
-<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">オンラインでのお申し込みから、担当者による内容確認、当日のサービス、完了報告までの標準的な流れです。</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">オンラインでのお申し込みから、担当者による内容確認、グリーターと手配済み車両・乗務員の連携、当日の会合、完了報告までの標準的な流れです。</p><!-- /wp:paragraph -->
 <!-- wp:html --><div class="jat-feature-list">
 <div class="jat-feature"><span class="jat-feature__mark">1</span><div><h3>オンラインでお申し込み</h3><p>サービス、日時、行程、旅客、サインボード、車両などをご入力ください。</p></div></div>
 <div class="jat-feature"><span class="jat-feature__mark">2</span><div><h3>担当者が内容を確認</h3><p>対応人員、場所、追加確認事項、料金を確認します。送信時点では予約確定ではありません。</p></div></div>
-<div class="jat-feature"><span class="jat-feature__mark">3</span><div><h3>お見積り・予約確定</h3><p>必要な確認が終わり、双方で条件を確認した後、予約確定をご連絡します。</p></div></div>
-<div class="jat-feature"><span class="jat-feature__mark">4</span><div><h3>サービス前の準備</h3><p>フライト・列車、連絡先、サインボード、車両・乗務員情報などを整理します。</p></div></div>
-<div class="jat-feature"><span class="jat-feature__mark">5</span><div><h3>現地で会合・ご案内</h3><p>指定地点でお迎えし、ご本人確認後、約定した範囲の支援を行います。</p></div></div>
-<div class="jat-feature"><span class="jat-feature__mark">6</span><div><h3>サービス完了</h3><p>定めた終了地点までご案内し、必要に応じて依頼元へ完了を報告します。</p></div></div>
+<div class="jat-feature"><span class="jat-feature__mark">3</span><div><h3>お見積り・予約確定</h3><p>必要な確認が終わり、お見積りと条件をメール等の書面で双方が確認した後、予約確定をご連絡します。</p></div></div>
+<div class="jat-feature"><span class="jat-feature__mark">4</span><div><h3>サービス前の準備</h3><p>フライト・列車、連絡先、サインボード、車両・乗務員情報を整理し、会合位置と連携手順を確認します。</p></div></div>
+<div class="jat-feature"><span class="jat-feature__mark">5</span><div><h3>現地で会合・車両へご案内</h3><p>指定地点でお迎えし、ご本人確認後、乗務員と連携して約定した車両または終了地点までご案内します。遅延や未会合などの異常時は、ご依頼元へ状況を連絡して対応を確認します。</p></div></div>
+<div class="jat-feature"><span class="jat-feature__mark">6</span><div><h3>サービス完了・ご報告</h3><p>定めた終了地点までのご案内後、事前に合意した報告先と項目に沿って完了を報告します。</p></div></div>
 </div><!-- /wp:html -->
 <!-- wp:heading --><h2 class="wp-block-heading">お急ぎのご依頼</h2><!-- /wp:heading -->
 <!-- wp:paragraph --><p>サービス日時が近い場合でも、まず行程をお知らせください。対応可否を優先して確認します。オンライン送信だけでは予約確定になりません。</p><!-- /wp:paragraph -->
 HTML;
 
 $price = <<<'HTML'
-<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">料金はサービス種別、場所、日時、人数、必要な支援内容などを確認して個別にご案内します。</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">料金はサービス種別、場所、日時、人数、必要な支援内容などを確認して個別にご案内します。各項目を分けたお見積りを提示し、合計金額と条件を書面で確認します。</p><!-- /wp:paragraph -->
 <!-- wp:heading --><h2 class="wp-block-heading">お見積りの主な構成</h2><!-- /wp:heading -->
 <!-- wp:table {"hasFixedLayout":false,"className":"is-style-stripes"} --><figure class="wp-block-table is-style-stripes"><table><thead><tr><th>項目</th><th>確認内容</th></tr></thead><tbody>
-<tr><td>基本サービス</td><td>空港・駅、お迎え・お見送り、標準対応範囲</td></tr>
-<tr><td>日時</td><td>早朝・深夜、繁忙時期、直前のご依頼</td></tr>
-<tr><td>人数・行程</td><td>団体、複数便、複数地点、追加スタッフ</td></tr>
-<tr><td>追加支援</td><td>標準範囲を超える待機、同行、特殊なサインボードなど</td></tr>
-<tr><td>実費</td><td>交通、施設利用、手配品など事前に合意した費用</td></tr>
+<tr><td>基本サービス料金</td><td>空港・駅、お迎え・お見送り、標準対応範囲</td></tr>
+<tr><td>日時・時期による変動</td><td>早朝・深夜、繁忙時期、直前のご依頼</td></tr>
+<tr><td>人数・行程による変動</td><td>団体、複数便、複数地点、追加スタッフの要否</td></tr>
+<tr><td>追加支援料金</td><td>標準範囲を超える待機、同行、特殊なサインボードなど</td></tr>
+<tr><td>実費・その他</td><td>交通、施設利用、手配品など事前に合意した費用</td></tr>
 </tbody></table></figure><!-- /wp:table -->
 <!-- wp:heading --><h2 class="wp-block-heading">料金確定まで</h2><!-- /wp:heading -->
-<!-- wp:paragraph --><p>お申し込み内容を受け付けた後、担当者が確認し、お見積りまたは追加質問をご連絡します。内容に同意いただき、当社から予約確定をお知らせするまでは、サービスの成立や料金の請求は確定しません。</p><!-- /wp:paragraph -->
+<!-- wp:paragraph --><p>お申し込み内容を受け付けた後、担当者が確認し、項目別のお見積りまたは追加質問をご連絡します。合計金額、追加料金が発生し得る条件、変更・キャンセル条件に同意いただき、当社からメール等の書面で予約確定をお知らせするまでは、サービスの成立や料金の請求は確定しません。</p><!-- /wp:paragraph -->
 <!-- wp:heading --><h2 class="wp-block-heading">変更・キャンセル</h2><!-- /wp:heading -->
 <!-- wp:paragraph --><p>変更・キャンセルの取扱いは、確定した予約条件とキャンセルポリシーに基づきます。正式な条件は、事業責任者および法務確認後に公開します。</p><!-- /wp:paragraph -->
 HTML;
@@ -192,7 +200,7 @@ $faqItems = array(
     ),
     'サインボード・旅客情報' => array(
         'サインボードには何を表示できますか。' => 'お客様名、会社名、グループ名などをご指定いただけます。特殊なレイアウトは対応可否をご案内します。',
-        'ロゴを入れられますか。' => '首期のオンライン申込ではロゴファイルを受け付けません。必要な場合は申込後に個別にご相談ください。',
+        'ロゴを入れられますか。' => '初期のオンライン申込ではロゴファイルを受け付けません。必要な場合は申込後に個別にご相談ください。',
         '複数名の名前を表示できますか。' => '文字数と見やすさを確認してご案内します。団体名や代表者名の表示もご相談いただけます。',
         'どの旅客情報が必要ですか。' => 'お名前、人数、到着・出発情報、当日の連絡先、サインボード表示、必要な支援内容などです。',
     ),
@@ -224,6 +232,9 @@ $corporate = <<<'HTML'
 <div class="jat-card"><h3>継続利用</h3><p>会社コード、担当窓口、発注方法、請求条件など、ご利用規模に応じた運用をご相談いただけます。</p></div>
 <div class="jat-card"><h3>報告方法</h3><p>報告先、必要項目、送付時期を伺い、ご希望の運用を確認します。</p></div>
 </div><!-- /wp:html -->
+<!-- wp:heading --><h2 class="wp-block-heading">完了報告の項目例</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>以下は報告内容を検討するための例であり、実際の報告項目、方法、送付時期はご依頼ごとの約定により決まります。</p><!-- /wp:paragraph -->
+<!-- wp:list --><ul class="wp-block-list"><li>お客様との会合時刻</li><li>手配済み車両・乗務員との連携時刻</li><li>ご案内を完了した地点と時刻</li><li>遅延、会合位置の変更、未会合対応などの特記事項</li></ul><!-- /wp:list -->
 <!-- wp:heading --><h2 class="wp-block-heading">ご相談時にお知らせいただきたい内容</h2><!-- /wp:heading -->
 <!-- wp:list --><ul class="wp-block-list"><li>利用予定の空港・駅、日時、便・列車</li><li>旅客人数、便数、車両台数</li><li>必要な言語や現地支援</li><li>依頼・連絡・完了報告の窓口</li><li>継続利用の場合は想定件数と請求条件</li></ul><!-- /wp:list -->
 HTML;
@@ -290,21 +301,21 @@ $pages = array(
     array('key' => 'narita', 'parent' => 'area', 'slug' => 'narita-airport', 'title' => '成田空港', 'excerpt' => '成田空港第1・第2・第3ターミナルのお迎え・お見送り。', 'content' => jat_location_content('成田空港の各ターミナルで、到着ロビーのお迎え、車両へのご案内、出発時のチェックイン動線を支援します。', array('第1ターミナル', '第2ターミナル', '第3ターミナル'), array('到着ロビーの指定位置でサインボードを掲げて待機', '便と到着区域を確認して会合位置を指定', '出発時は車寄せなど約束した位置で会合'), array('航空会社、便名、到着・出発ターミナルをお知らせください。', '到着区域、ターミナル間移動、配車場所は当日の施設運用に従います。', '特殊な移動支援が必要な場合は申込時にお知らせください。')), 'order' => 22),
     array('key' => 'tokyo', 'parent' => 'area', 'slug' => 'tokyo-station', 'title' => '東京駅', 'excerpt' => '新幹線ホーム・主要改札・車寄せでのお迎え・お見送り。', 'content' => jat_location_content('東京駅の新幹線到着・出発に合わせ、号車・座席・改札情報を確認し、駅構内と車両の移動を支援します。', array('新幹線ホーム周辺', '主要改札', '八重洲側・丸の内側の指定車寄せ'), array('号車・座席付近または改札付近でサインボード待機', '入場制限や混雑時は改札外の指定位置で会合', '出発時は車寄せから改札・ホームへご案内'), array('列車名、列車番号、号車、座席をお知らせください。', '工事、混雑、入場券の取扱いにより会合方法が変わる場合があります。', '車両の配車側と駅側を事前に確認します。')), 'order' => 23),
     array('key' => 'shinagawa', 'parent' => 'area', 'slug' => 'shinagawa-station', 'title' => '品川駅', 'excerpt' => '新幹線ホーム・改札・車寄せでのお迎え・お見送り。', 'content' => jat_location_content('品川駅の新幹線到着・出発に合わせ、号車・座席・改札情報を確認し、駅構内と車両の移動を支援します。', array('新幹線ホーム周辺', '主要改札', '港南口側など予約時に指定する車寄せ'), array('号車・座席付近または改札付近でサインボード待機', '入場制限や混雑時は改札外の指定位置で会合', '出発時は車寄せから改札・ホームへご案内'), array('列車名、列車番号、号車、座席をお知らせください。', '駅施設の運用、雨天、混雑、工事により会合位置が変わる場合があります。', 'バリアフリー経路や手荷物が多い場合は申込時にお知らせください。')), 'order' => 24),
-    array('key' => 'other-area', 'parent' => 'area', 'slug' => 'other-locations', 'title' => 'その他の空港・駅', 'excerpt' => 'その他の場所は行程を伺って対応可否を確認します。', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">羽田空港、成田空港、東京駅、品川駅以外の空港・駅も、日時、行程、必要な支援を伺って個別に確認します。</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class="wp-block-heading">確認に必要な情報</h2><!-- /wp:heading --><!-- wp:list --><ul class="wp-block-list"><li>空港・駅の正式名称</li><li>便・列車と日時</li><li>旅客人数と当日の連絡先</li><li>希望する会合位置と終了地点</li><li>車両、手荷物、追加支援の有無</li></ul><!-- /wp:list -->', 'order' => 25),
+    array('key' => 'other-area', 'parent' => 'area', 'slug' => 'other-locations', 'title' => 'その他の空港・駅', 'excerpt' => 'その他の場所は行程を伺って対応可否を確認します。', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">羽田空港、成田空港、東京駅、品川駅以外の日本国内およびアジアの空港・駅も、日時、行程、必要な支援を伺い、ネットワークを確認して対応可否を個別にご案内します。すべての地域での対応を保証するものではありません。</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class="wp-block-heading">確認に必要な情報</h2><!-- /wp:heading --><!-- wp:list --><ul class="wp-block-list"><li>空港・駅の正式名称</li><li>便・列車と日時</li><li>旅客人数と当日の連絡先</li><li>希望する会合位置と終了地点</li><li>車両、手荷物、追加支援の有無</li></ul><!-- /wp:list -->', 'order' => 25),
     array('key' => 'flow', 'slug' => 'flow', 'title' => 'ご利用の流れ', 'excerpt' => 'お申し込みからサービス完了まで。', 'content' => $flow, 'order' => 30),
     array('key' => 'price', 'slug' => 'price', 'title' => '料金', 'excerpt' => '料金は内容を確認して個別にご案内します。', 'content' => $price, 'order' => 40),
     array('key' => 'cases', 'slug' => 'cases', 'title' => '導入事例', 'excerpt' => '公開許諾済みの事例を準備しています。', 'content' => $cases, 'status' => 'draft', 'order' => 50),
     array('key' => 'faq', 'slug' => 'faq', 'title' => 'よくあるご質問', 'excerpt' => '予約・当日・料金・法人利用などのご質問。', 'content' => $faq, 'order' => 60),
     array('key' => 'corporate', 'slug' => 'corporate', 'title' => '法人のお客様', 'excerpt' => '企業、旅行会社、車両会社、団体の迎送をご相談いただけます。', 'content' => $corporate, 'order' => 70),
     array('key' => 'recruit', 'slug' => 'recruit', 'title' => '採用情報', 'excerpt' => '日本全国の玄関口で、最高峰のホスピタリティを提供する「お迎えのスペシャリスト」を募集しています。', 'content' => $recruit, 'role' => 'recruit', 'status' => 'draft', 'order' => 75),
-    array('key' => 'company', 'slug' => 'company', 'title' => '会社案内', 'excerpt' => 'Japan Airport Transfer の考え方と会社概要。', 'content' => $company, 'status' => 'draft', 'order' => 80),
-    array('key' => 'contact', 'parent' => 'company', 'slug' => 'contact', 'title' => 'お問い合わせ', 'excerpt' => 'サービス内容や法人利用をご相談ください。', 'content' => $contact, 'status' => 'draft', 'order' => 81),
+    array('key' => 'company', 'slug' => 'company', 'title' => '会社案内', 'excerpt' => 'Japan Airport Transfer の考え方と会社概要。', 'content' => $company, 'status' => 'draft', 'preserve_if_published' => true, 'order' => 80),
+    array('key' => 'contact', 'parent' => 'company', 'slug' => 'contact', 'title' => 'お問い合わせ', 'excerpt' => 'サービス内容や法人利用をご相談ください。', 'content' => $contact, 'status' => 'draft', 'preserve_if_published' => true, 'order' => 81),
     array('key' => 'reservation', 'slug' => 'reservation', 'title' => 'オンライン申込', 'excerpt' => '五つの手順で必要事項をご入力ください。', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">サービス内容、旅客情報、サインボード、申請者・車両情報をご入力ください。送信時点では受付であり、予約確定ではありません。</p><!-- /wp:paragraph --><!-- wp:shortcode -->[jat_reservation_form]<!-- /wp:shortcode -->', 'order' => 90),
     array('key' => 'reservation-complete', 'parent' => 'reservation', 'slug' => 'complete', 'title' => 'お申し込みを受け付けました', 'excerpt' => '', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">お申し込みありがとうございます。受付番号と内容確認のご案内をメールでお送りします。</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>この時点では予約確定ではありません。担当者が内容、人員、場所、料金を確認し、あらためてご連絡します。</p><!-- /wp:paragraph -->', 'order' => 91),
-    array('key' => 'privacy', 'slug' => 'privacy-policy', 'title' => 'プライバシーポリシー', 'excerpt' => '', 'content' => $legalDraft('プライバシーポリシー'), 'status' => 'draft', 'order' => 100),
-    array('key' => 'terms', 'slug' => 'terms', 'title' => 'サービス利用規約', 'excerpt' => '', 'content' => $legalDraft('サービス利用規約'), 'status' => 'draft', 'order' => 101),
-    array('key' => 'cancel', 'slug' => 'cancellation-policy', 'title' => 'キャンセルポリシー', 'excerpt' => '', 'content' => $legalDraft('キャンセルポリシー'), 'status' => 'draft', 'order' => 102),
-    array('key' => 'legal', 'slug' => 'legal', 'title' => '特定商取引法に基づく表示', 'excerpt' => '', 'content' => $legalDraft('特定商取引法に基づく表示'), 'status' => 'draft', 'order' => 103),
+    array('key' => 'privacy', 'slug' => 'privacy-policy', 'title' => 'プライバシーポリシー', 'excerpt' => '', 'content' => $legalDraft('プライバシーポリシー'), 'status' => 'draft', 'preserve_if_published' => true, 'order' => 100),
+    array('key' => 'terms', 'slug' => 'terms', 'title' => 'サービス利用規約', 'excerpt' => '', 'content' => $legalDraft('サービス利用規約'), 'status' => 'draft', 'preserve_if_published' => true, 'order' => 101),
+    array('key' => 'cancel', 'slug' => 'cancellation-policy', 'title' => 'キャンセルポリシー', 'excerpt' => '', 'content' => $legalDraft('キャンセルポリシー'), 'status' => 'draft', 'preserve_if_published' => true, 'order' => 102),
+    array('key' => 'legal', 'slug' => 'legal', 'title' => '特定商取引法に基づく表示', 'excerpt' => '', 'content' => $legalDraft('特定商取引法に基づく表示'), 'status' => 'draft', 'preserve_if_published' => true, 'order' => 103),
     array('key' => 'accessibility', 'slug' => 'accessibility', 'title' => 'アクセシビリティ', 'excerpt' => '', 'content' => '<!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">年齢、障害、利用環境にかかわらず、できるだけ多くの方が情報と申込機能を利用できるサイトを目指します。</p><!-- /wp:paragraph --><!-- wp:heading --><h2 class="wp-block-heading">取り組み</h2><!-- /wp:heading --><!-- wp:list --><ul class="wp-block-list"><li>キーボードでの操作と見える焦点表示</li><li>十分な文字サイズと色の対比</li><li>画像の代替文字と見出し構造</li><li>フォームの明確なラベル、エラー概要、入力内容の保持</li><li>動きを減らす設定への対応</li></ul><!-- /wp:list -->', 'order' => 104),
     array('key' => 'news', 'slug' => 'news', 'title' => 'お知らせ', 'excerpt' => '', 'content' => '', 'order' => 110),
 );
@@ -341,6 +352,10 @@ foreach ($pages as $page) {
     $parentId = isset($page['parent']) ? (int) ($pageIds[$page['parent']] ?? 0) : 0;
     $pageId = jat_seed_page($page, $parentId);
     $pageIds[$page['key']] = $pageId;
+
+    if (! empty($page['preserve_if_published']) && get_post_status($pageId) === 'publish') {
+        continue;
+    }
 
     update_post_meta($pageId, 'jat_content_role', $page['role'] ?? ($roleByKey[$page['key']] ?? 'general'));
     update_post_meta($pageId, 'jat_sort_order', (int) ($page['order'] ?? 0));
