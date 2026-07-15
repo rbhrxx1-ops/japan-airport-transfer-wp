@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from collections import deque
@@ -13,7 +14,7 @@ from urllib.parse import urldefrag, urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
-BASE = "http://127.0.0.1:8080/"
+BASE = os.environ.get("SITE_BASE", "http://127.0.0.1:8080/")
 MAX_PAGES = 100
 TIMEOUT = 10
 FORBIDDEN_VISIBLE_PATTERNS = (

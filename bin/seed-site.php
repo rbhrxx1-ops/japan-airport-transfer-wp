@@ -171,6 +171,37 @@ HTML;
 
 $price = <<<'HTML'
 <!-- wp:paragraph {"className":"jat-lead"} --><p class="jat-lead">料金はサービス種別、場所、日時、人数、必要な支援内容などを確認して個別にご案内します。各項目を分けたお見積りを提示し、合計金額と条件を書面で確認します。</p><!-- /wp:paragraph -->
+<!-- wp:heading --><h2 class="wp-block-heading">基本サービス料金（目安）</h2><!-- /wp:heading -->
+<!-- wp:paragraph --><p>標準的な対応範囲（スタッフ1名、2時間まで）における基本料金の目安です。料金はすべて<strong>消費税込み</strong>です。</p><!-- /wp:paragraph -->
+<!-- wp:heading {"level":3} --><h3>羽田空港（HND）</h3><!-- /wp:heading -->
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-stripes"} --><figure class="wp-block-table is-style-stripes"><table><thead><tr><th>サービス内容</th><th>基本料金（税込）</th><th>早朝・深夜料金（税込）</th><th>基本時間</th></tr></thead><tbody>
+<tr><td>空港内の送迎サポート</td><td>7,000円</td><td>12,000円</td><td>2時間以内</td></tr>
+<tr><td>ターミナル間の乗継サポート</td><td>12,000円</td><td>17,000円</td><td>3時間以内</td></tr>
+<tr><td>空港と東京都内の駅・ホテル間の同行</td><td>15,000円</td><td>20,000円</td><td>3時間以内</td></tr>
+</tbody></table></figure><!-- /wp:table -->
+
+<!-- wp:heading {"level":3} --><h3>東京駅（Tokyo Station）</h3><!-- /wp:heading -->
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-stripes"} --><figure class="wp-block-table is-style-stripes"><table><thead><tr><th>サービス内容</th><th>基本料金（税込）</th><th>早朝・深夜料金（税込）</th><th>基本時間</th></tr></thead><tbody>
+<tr><td>駅構内の送迎サポート</td><td>7,000円</td><td>12,000円</td><td>1時間30分以内</td></tr>
+<tr><td>駅と近隣ホテル間の同行</td><td>13,000円</td><td>18,000円</td><td>3時間以内</td></tr>
+</tbody></table></figure><!-- /wp:table -->
+
+<!-- wp:heading {"level":3} --><h3>品川駅（Shinagawa Station）</h3><!-- /wp:heading -->
+<!-- wp:table {"hasFixedLayout":false,"className":"is-style-stripes"} --><figure class="wp-block-table is-style-stripes"><table><thead><tr><th>サービス内容</th><th>基本料金（税込）</th><th>早朝・深夜料金（税込）</th><th>基本時間</th></tr></thead><tbody>
+<tr><td>駅構内の送迎サポート</td><td>7,000円</td><td>12,000円</td><td>1時間30分以内</td></tr>
+<tr><td>駅と近隣ホテル間の同行</td><td>13,000円</td><td>18,000円</td><td>3時間以内</td></tr>
+</tbody></table></figure><!-- /wp:table -->
+
+<!-- wp:heading {"level":3} --><h3>成田空港（NRT）</h3><!-- /wp:heading -->
+<!-- wp:paragraph --><p>対応エリア拡大に向け、現在<strong>準備中</strong>です。</p><!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":3} --><h3>共通条件</h3><!-- /wp:heading -->
+<!-- wp:list --><ul>
+<li><strong>時間帯：</strong> 基本時間帯は <code>7:00〜20:59</code> です。到着時刻またはご指定の待命時刻が <code>21:00〜翌6:59</code> の場合、早朝・深夜料金が適用されます。</li>
+<li><strong>延長料金：</strong> 規定の基本時間を超える場合、30分ごとに <code>3,000円（税込）</code> の延長料金が発生します。時間の起算点は、フライト到着時刻またはお客様が指定された待命時刻となります。</li>
+<li><strong>実費負担：</strong> 同行サービス中に発生する交通費等の実費は、別途申し受けます。</li>
+</ul><!-- /wp:list -->
+
 <!-- wp:heading --><h2 class="wp-block-heading">お見積りの主な構成</h2><!-- /wp:heading -->
 <!-- wp:table {"hasFixedLayout":false,"className":"is-style-stripes"} --><figure class="wp-block-table is-style-stripes"><table><thead><tr><th>項目</th><th>確認内容</th></tr></thead><tbody>
 <tr><td>基本サービス料金</td><td>空港・駅、お迎え・お見送り、標準対応範囲</td></tr>

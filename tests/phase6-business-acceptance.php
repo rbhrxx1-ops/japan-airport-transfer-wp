@@ -143,7 +143,10 @@ if ($reservationPage !== null) {
 $pricePage = $get_page('price');
 if ($pricePage !== null) {
     $assert(str_contains($pricePage->post_content, 'お見積り'), '价格页未保持个别报价边界。');
-    $assert(!preg_match('/(?:¥|￥)\s*[0-9]|[0-9]{1,3}(?:,[0-9]{3})+\s*円/u', wp_strip_all_tags($pricePage->post_content)), '价格页包含未经确认的具体金额。');
+    $assert(str_contains($pricePage->post_content, '7,000円'), '价格页缺少已授权的基本料金。');
+    $assert(str_contains($pricePage->post_content, '20,000円'), '价格页缺少已授权的羽田同行早朝・深夜料金。');
+    $assert(str_contains($pricePage->post_content, '成田空港') && str_contains($pricePage->post_content, '準備中'), '价格页未保持成田机场准备中边界。');
+    $assert(str_contains($pricePage->post_content, 'メール等の書面で予約確定'), '价格页未保持书面预约确认边界。');
 }
 
 $faqCount = (int) wp_count_posts('jat_faq')->publish;

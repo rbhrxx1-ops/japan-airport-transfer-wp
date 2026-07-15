@@ -1,0 +1,50 @@
+{
+  "url": "https://meetandgreet.jp/price/",
+  "title": "料金 – Japan Airport Transfer",
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36; Manus-User/1.0",
+  "devicePixelRatio": 1,
+  "innerWidth": 390,
+  "innerHeight": 844,
+  "clientWidth": 390,
+  "scrollWidth": 390,
+  "mobileMediaQuery": true,
+  "hasChallenge": false,
+  "hasHaneda": true,
+  "hasTokyo": true,
+  "hasShinagawa": true,
+  "hasNaritaPreparing": true,
+  "hasTaxIncluded": true,
+  "hasExtensionFee": true,
+  "hasWrittenConfirmation": true,
+  "tableMetrics": [
+    {
+      "index": 0,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "scrollWidth": 707
+    },
+    {
+      "index": 1,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "scrollWidth": 652
+    },
+    {
+      "index": 2,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "scrollWidth": 652
+    },
+    {
+      "index": 3,
+      "left": 16,
+      "right": 374,
+      "width": 358,
+      "scrollWidth": 562
+    }
+  ],
+  "horizontalOverflow": false
+}
