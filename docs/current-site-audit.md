@@ -4,6 +4,8 @@
 **审计时间：** 2026-07-11（GMT+9）  
 **审计方式：** 公开页面只读访问；尚未登录后台；未进行任何生产修改。
 
+> **历史记录说明（2026-07-15）：** 本文主体记录 2026-07-11 的旧域名现场，不对历史观察做搜索替换。当前生产主域名已变更为 `https://meetandgreet.jp/`；WordPress `siteurl/home`、根域 HTTPS 与首页 canonical 已使用新域名。完整迁移核查与未完成门禁见 `docs/domain-migration-2026-07-15.md`。
+
 ## 一、公开首页现状
 
 公开首页可通过 HTTPS 访问，页面标题为 `japanairporttransfer.com`。目前展示 WordPress 初始文章提示 `Welcome to WordPress. This is your first post. Edit or delete it, then start writing!`，说明公开内容仍处于初始化状态。
@@ -82,8 +84,8 @@
 |---|---|---|
 | 站点标题 | `japanairporttransfer.com` | 测试环境改为经确认的日文品牌标题 |
 | 副标题 | 空 | 上线前补充简洁日文价值主张 |
-| WordPress 地址 | `https://japanairporttransfer.com` | 保持 HTTPS；迁移/测试环境须使用独立 URL |
-| 站点地址 | `https://japanairporttransfer.com` | 同上 |
+| WordPress 地址 | `https://japanairporttransfer.com`（2026-07-11 历史值） | 2026-07-15 公开 REST 根信息已显示 `https://meetandgreet.jp`；测试环境仍使用独立 URL |
+| 站点地址 | `https://japanairporttransfer.com`（2026-07-11 历史值） | 2026-07-15 公开 REST 根信息已显示 `https://meetandgreet.jp` |
 | 管理员邮箱 | 已配置为个人 Gmail 地址 | 属管理信息，不在公开交付文档展开；正式客服/系统告警地址仍需中村先生确认 |
 | 任何人可注册 | 未勾选 | 符合首期无客户账户设计，建议保持关闭 |
 | 站点语言 | 简体中文 | 测试环境应切换为日本語，并验证主题、插件、浏览器校验、邮件及系统提示无中文残留 |

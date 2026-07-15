@@ -1,6 +1,6 @@
 # Japan Airport Transfer WordPress
 
-`japanairporttransfer.com` 的专属 WordPress 主题与五步在线预约插件项目。
+`meetandgreet.jp` 的专属 WordPress 主题与五步在线预约插件项目。主域名于 2026-07-15 从 `japanairporttransfer.com` 迁移；迁移审计见 `docs/domain-migration-2026-07-15.md`。
 
 ## 范围
 
@@ -14,7 +14,7 @@
 
 ## 环境基线
 
-生产站当前审计环境为 WordPress 7.0.1、PHP 8.3.30、MariaDB 11.8.8、LiteSpeed 与对象缓存。代码必须兼容该基线，并确保预约接口、确认页、nonce 与用户输入不被页面缓存。
+生产主地址为 `https://meetandgreet.jp/`。生产站当前审计环境为 WordPress 7.0.1、PHP 8.3.30、MariaDB 11.8.8、LiteSpeed 与对象缓存。代码必须兼容该基线，并确保预约接口、确认页、nonce 与用户输入不被页面缓存。本地集成测试固定使用隔离地址，不得将测试基准直接改为生产域名。
 
 ## 目录
 
