@@ -3,7 +3,7 @@ Theme Name: JAT Meet Theme
 Theme URI: https://meetandgreet.jp/
 Author: Japan Airport Transfer
 Description: 空港・駅のミート＆センディングサービス専用ブロックテーマ。
-Version: 0.1.0
+Version: 0.1.1
 Requires at least: 6.8
 Tested up to: 7.0
 Requires PHP: 8.1
@@ -25,9 +25,12 @@ Text Domain: jat-meet-theme
   --jat-shadow-lift: 0 24px 64px rgba(8, 27, 51, 0.16);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
 body { text-rendering: optimizeLegibility; }
-body.admin-bar .jat-header { top: 32px; }
+body.admin-bar .wp-site-blocks > header.wp-block-template-part { top: 32px; }
 
 *:focus-visible {
   outline: 3px solid var(--jat-gold);
@@ -63,10 +66,14 @@ a:hover { color: var(--jat-gold); }
   text-align: center;
 }
 
-.jat-header {
+.wp-site-blocks > header.wp-block-template-part {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.jat-header {
+  position: relative;
   border-bottom: 1px solid rgba(226, 232, 240, .72);
   background: rgba(251, 249, 244, .92);
   backdrop-filter: blur(16px);
@@ -321,7 +328,7 @@ a:hover { color: var(--jat-gold); }
 .jat-mobile-actions { display: none; }
 
 @media (max-width: 960px) {
-  body.admin-bar .jat-header { top: 46px; }
+  body.admin-bar .wp-site-blocks > header.wp-block-template-part { top: 46px; }
   .jat-header__inner { min-height: 68px; }
   .jat-header .wp-block-navigation__responsive-container.is-menu-open { padding: 1.25rem; color: var(--jat-navy); background: var(--jat-ivory); }
   .jat-header .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content { padding-top: 4rem; }
