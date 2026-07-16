@@ -3,6 +3,10 @@ import sys
 from playwright.sync_api import sync_playwright
 
 BASE_URL = os.environ.get("JAT_BASE_URL", "http://127.0.0.1:8080/")
+USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+)
 CASES = (
     {"name": "desktop", "viewport": {"width": 1440, "height": 900}, "mobile": False},
     {"name": "mobile", "viewport": {"width": 390, "height": 844}, "mobile": True},
@@ -29,9 +33,17 @@ with sync_playwright() as playwright:
     )
 
     for case in CASES:
-        context = browser.new_context(viewport=case["viewport"])
+        context = browser.new_context(
+            viewport=case["viewport"],
+            locale="ja-JP",
+            user_agent=USER_AGENT,
+        )
         page = context.new_page()
-        page.goto(BASE_URL, wait_until="networkidle")
+        response = page.goto(BASE_URL, wait_until="networkidle")
+        if response is None or response.status != 200:
+            raise AssertionError(
+                f"{case['name']}: HTTP {response.status if response else 'no response'}"
+            )
 
         header_selector = ".wp-site-blocks > header.wp-block-template-part"
         header = page.locator(header_selector)

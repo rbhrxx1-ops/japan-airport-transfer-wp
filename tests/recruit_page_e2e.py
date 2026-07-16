@@ -8,6 +8,10 @@ from playwright.sync_api import sync_playwright
 BASE_URL = os.environ.get("SITE_BASE_URL", "http://127.0.0.1:8080").rstrip("/")
 RECRUIT_URL = f"{BASE_URL}/recruit/"
 SCREENSHOT_DIR = Path(os.environ.get("RECRUIT_SCREENSHOT_DIR", "/tmp/jat-recruit-e2e"))
+USER_AGENT = (
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36"
+)
 
 
 def assert_page(page, viewport_name: str) -> None:
@@ -81,7 +85,11 @@ def main() -> None:
             args=["--no-sandbox"],
         )
         try:
-            desktop = browser.new_page(viewport={"width": 1440, "height": 900})
+            desktop = browser.new_page(
+                viewport={"width": 1440, "height": 900},
+                locale="ja-JP",
+                user_agent=USER_AGENT,
+            )
             assert_page(desktop, "desktop")
             desktop.close()
 
@@ -89,6 +97,8 @@ def main() -> None:
                 viewport={"width": 390, "height": 844},
                 is_mobile=True,
                 device_scale_factor=1,
+                locale="ja-JP",
+                user_agent=USER_AGENT,
             )
             assert_page(mobile, "mobile")
             mobile.close()

@@ -1,0 +1,4 @@
+84c2c9b9854df0674b6cee331b20c07c5fe058dfc30c55b1d6535f7e5573b809  docs/screenshots/card-layout-2026-07-16/home-desktop-1440.png
+cbcc1732a986e54ea5ac7d48d88173f610e545426702278ee57245d3084a0fd0  docs/screenshots/card-layout-2026-07-16/home-tablet-768.png
+7e9018fb4386d52e36463297e35cb2be525e1f738707e64e3e083efcdb564ddb  docs/screenshots/card-layout-2026-07-16/service-desktop-1440.png
+0d61a2f40f89935f3cec65f924effefd815dd3ddc7a3995c3e25601c8a82f886  docs/screenshots/card-layout-2026-07-16/service-mobile-390.png
