@@ -23,6 +23,138 @@ function jat_meet_theme_has_seo_plugin(): bool
 }
 
 /**
+ * Read the saved AIOSEO value for WordPress's static posts page.
+ *
+ * AIOSEO treats the page assigned to page_for_posts as an archive on the
+ * public request, so its regular per-page title and description are skipped.
+ * This compatibility layer keeps AIOSEO as the sole tag owner while restoring
+ * the values that were saved for that page in AIOSEO's own Post model.
+ */
+function jat_meet_theme_aioseo_posts_page_value(string $field, string $current): string
+{
+    if (
+        ! defined('AIOSEO_VERSION') ||
+        (! is_home() && ! is_post_type_archive('jat_notice'))
+    ) {
+        return $current;
+    }
+
+    $postsPageId = (int) get_option('page_for_posts');
+    if ($postsPageId <= 0) {
+        return $current;
+    }
+
+    if (! class_exists('AIOSEO\\Plugin\\Common\\Models\\Post')) {
+        return $current;
+    }
+
+    $aioseoPost = AIOSEO\Plugin\Common\Models\Post::getPost($postsPageId);
+    if (! $aioseoPost) {
+        return $current;
+    }
+
+    $value = 'title' === $field
+        ? (string) $aioseoPost->title
+        : (string) $aioseoPost->description;
+
+    return '' !== trim($value) ? $value : $current;
+}
+
+/**
+ * Restore the saved AIOSEO title on the static posts page.
+ */
+function jat_meet_theme_aioseo_posts_page_title(string $title): string
+{
+    return jat_meet_theme_aioseo_posts_page_value('title', $title);
+}
+add_filter('aioseo_title', 'jat_meet_theme_aioseo_posts_page_title');
+
+/**
+ * Restore the saved AIOSEO description on the static posts page.
+ */
+function jat_meet_theme_aioseo_posts_page_description(string $description): string
+{
+    return jat_meet_theme_aioseo_posts_page_value('description', $description);
+}
+add_filter('aioseo_description', 'jat_meet_theme_aioseo_posts_page_description');
+
+/**
+ * Override WordPress's document title for the static posts page.
+ */
+function jat_meet_theme_aioseo_posts_page_document_title(string $title): string
+{
+    return jat_meet_theme_aioseo_posts_page_value('title', $title);
+}
+add_filter('pre_get_document_title', 'jat_meet_theme_aioseo_posts_page_document_title', 99);
+
+/**
+ * Emit the saved posts-page description only when AIOSEO emits no description.
+ */
+function jat_meet_theme_aioseo_posts_page_meta_description(): void
+{
+    if (
+        ! defined('AIOSEO_VERSION') ||
+        (! is_home() && ! is_post_type_archive('jat_notice')) ||
+        ! function_exists('aioseo')
+    ) {
+        return;
+    }
+
+    $nativeDescription = (string) aioseo()->meta->description->getDescription();
+    if ('' !== trim($nativeDescription)) {
+        return;
+    }
+
+    $description = jat_meet_theme_aioseo_posts_page_value('description', '');
+    if ('' !== trim($description)) {
+        echo '<meta name="description" content="' . esc_attr($description) . '">' . "\n";
+    }
+}
+add_action('wp_head', 'jat_meet_theme_aioseo_posts_page_meta_description', 2);
+
+/**
+ * Replace Open Graph values through AIOSEO's supported tag-array filter.
+ *
+ * @param array<string, mixed> $tags Existing Open Graph tags.
+ * @return array<string, mixed>
+ */
+function jat_meet_theme_aioseo_posts_page_facebook_tags(array $tags): array
+{
+    $tags['og:title'] = jat_meet_theme_aioseo_posts_page_value(
+        'title',
+        isset($tags['og:title']) ? (string) $tags['og:title'] : ''
+    );
+    $tags['og:description'] = jat_meet_theme_aioseo_posts_page_value(
+        'description',
+        isset($tags['og:description']) ? (string) $tags['og:description'] : ''
+    );
+
+    return $tags;
+}
+add_filter('aioseo_facebook_tags', 'jat_meet_theme_aioseo_posts_page_facebook_tags');
+
+/**
+ * Replace Twitter values through AIOSEO's supported tag-array filter.
+ *
+ * @param array<string, mixed> $tags Existing Twitter tags.
+ * @return array<string, mixed>
+ */
+function jat_meet_theme_aioseo_posts_page_twitter_tags(array $tags): array
+{
+    $tags['twitter:title'] = jat_meet_theme_aioseo_posts_page_value(
+        'title',
+        isset($tags['twitter:title']) ? (string) $tags['twitter:title'] : ''
+    );
+    $tags['twitter:description'] = jat_meet_theme_aioseo_posts_page_value(
+        'description',
+        isset($tags['twitter:description']) ? (string) $tags['twitter:description'] : ''
+    );
+
+    return $tags;
+}
+add_filter('aioseo_twitter_tags', 'jat_meet_theme_aioseo_posts_page_twitter_tags');
+
+/**
  * Build a concise plain-text description for the current request.
  */
 function jat_meet_theme_meta_description(): string
