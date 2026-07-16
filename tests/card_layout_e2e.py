@@ -23,6 +23,21 @@ CASES = (
         "grid": "#services .jat-grid--4",
         "cards": "#services .jat-grid--4 > .jat-card",
         "next": "#services + section",
+        "responsive_four_column": True,
+        "wide_on_desktop": True,
+        "check_hero_meta": True,
+    },
+    {
+        "name": "locations",
+        "path": "/",
+        "grid": ".jat-grid--4:has(> .jat-location)",
+        "cards": ".jat-grid--4:has(> .jat-location) > .jat-location",
+        "next": ".jat-grid--4:has(> .jat-location) + .wp-block-buttons",
+        "responsive_four_column": True,
+        "wide_on_desktop": True,
+        "max_card_height": 280,
+        "max_card_ratio": 1.3,
+        "minimum_following_gap": 44,
     },
     {
         "name": "service",
@@ -67,6 +82,40 @@ def overlap_area(first, second):
     return round(max(0, overlap_width) * max(0, overlap_height), 2)
 
 
+def collect_hero_meta(page):
+    container = page.locator(".jat-hero__meta").first
+    items = container.locator(":scope > span")
+    if items.count() != 4:
+        raise AssertionError(f"hero meta: expected 4 items, found {items.count()}")
+
+    container_box = rounded_box(container.bounding_box())
+    item_boxes = [rounded_box(items.nth(index).bounding_box()) for index in range(items.count())]
+    if container_box is None or any(box is None for box in item_boxes):
+        raise AssertionError("hero meta: container or item is not visible")
+
+    computed = container.evaluate(
+        """element => ({
+            display: getComputedStyle(element).display,
+            gridTemplateColumns: getComputedStyle(element).gridTemplateColumns
+        })"""
+    )
+    item_overflow = [
+        items.nth(index).evaluate(
+            """element => ({
+                horizontal: element.scrollWidth - element.clientWidth,
+                vertical: element.scrollHeight - element.clientHeight
+            })"""
+        )
+        for index in range(items.count())
+    ]
+    return {
+        "container": container_box,
+        "items": item_boxes,
+        "computed": computed,
+        "item_overflow": item_overflow,
+    }
+
+
 def collect_geometry(page, case):
     grid = page.locator(case["grid"]).first
     cards = page.locator(case["cards"])
@@ -107,7 +156,7 @@ def collect_geometry(page, case):
         })"""
     )
 
-    return {
+    geometry = {
         "url": page.url,
         "grid": grid_box,
         "cards": card_boxes,
@@ -115,6 +164,9 @@ def collect_geometry(page, case):
         "next": next_box,
         "document": document_size,
     }
+    if case.get("check_hero_meta"):
+        geometry["hero_meta"] = collect_hero_meta(page)
+    return geometry
 
 
 def assert_geometry(case, viewport_name, viewport_width, geometry):
@@ -144,28 +196,74 @@ def assert_geometry(case, viewport_name, viewport_width, geometry):
         )
 
     following_gap = next_box["y"] - card_bottom
-    if following_gap < 24:
-        errors.append(f"following content gap={following_gap:.2f}px, expected at least 24px")
+    minimum_following_gap = case.get("minimum_following_gap", 24)
+    if following_gap < minimum_following_gap:
+        errors.append(
+            f"following content gap={following_gap:.2f}px, "
+            f"expected at least {minimum_following_gap}px"
+        )
 
     horizontal_overflow = geometry["document"]["horizontalOverflow"]
     if horizontal_overflow > 1:
         errors.append(f"horizontal overflow={horizontal_overflow}px")
 
-    if case["name"] == "home" and viewport_width >= 961:
+    if case.get("wide_on_desktop") and viewport_width >= 961:
         expected_width = min(1400, viewport_width - 48)
         if abs(grid["width"] - expected_width) > 2:
             errors.append(
-                f"home grid width={grid['width']:.2f}px, expected {expected_width:.2f}px"
+                f"grid width={grid['width']:.2f}px, expected {expected_width:.2f}px"
+            )
+
+    if case.get("max_card_height") is not None:
+        tallest_card = max(card["height"] for card in cards)
+        if tallest_card > case["max_card_height"]:
+            errors.append(
+                f"card height={tallest_card:.2f}px, expected at most {case['max_card_height']}px"
+            )
+
+    if case.get("max_card_ratio") is not None:
+        tallest_ratio = max(card["height"] / card["width"] for card in cards)
+        if tallest_ratio > case["max_card_ratio"]:
+            errors.append(
+                f"card height/width ratio={tallest_ratio:.2f}, "
+                f"expected at most {case['max_card_ratio']}"
             )
 
     unique_columns = len({round(card["x"]) for card in cards})
-    expected_columns = 1 if viewport_width <= 720 else (2 if viewport_width <= 960 else None)
-    if case["name"] == "home" and viewport_width > 960:
-        expected_columns = 4
-    if case["name"] == "service" and viewport_width > 720:
-        expected_columns = 2
+    expected_columns = None
+    if case.get("responsive_four_column"):
+        expected_columns = 1 if viewport_width <= 680 else (2 if viewport_width <= 960 else 4)
+    if case["name"] == "service":
+        expected_columns = 1 if viewport_width <= 680 else 2
     if expected_columns is not None and unique_columns != expected_columns:
         errors.append(f"columns={unique_columns}, expected {expected_columns}")
+
+    hero_summary = None
+    if case.get("check_hero_meta"):
+        hero = geometry["hero_meta"]
+        if hero["computed"]["display"] != "grid":
+            errors.append(
+                f"hero meta display={hero['computed']['display']}, expected grid"
+            )
+        hero_columns = len({round(item["x"]) for item in hero["items"]})
+        hero_rows = len({round(item["y"]) for item in hero["items"]})
+        expected_hero_columns = 1 if viewport_width <= 480 else (2 if viewport_width <= 960 else 4)
+        expected_hero_rows = 4 // expected_hero_columns
+        if hero_columns != expected_hero_columns or hero_rows != expected_hero_rows:
+            errors.append(
+                f"hero meta columns/rows={hero_columns}/{hero_rows}, "
+                f"expected {expected_hero_columns}/{expected_hero_rows}"
+            )
+        for index, overflow in enumerate(hero["item_overflow"], start=1):
+            if overflow["horizontal"] > 1:
+                errors.append(
+                    f"hero meta item {index} horizontal overflow={overflow['horizontal']}px"
+                )
+        hero_summary = {
+            "columns": hero_columns,
+            "rows": hero_rows,
+            "grid_template_columns": hero["computed"]["gridTemplateColumns"],
+        }
 
     if errors:
         raise AssertionError(f"{case['name']} {viewport_name}: " + "; ".join(errors))
@@ -176,6 +274,7 @@ def assert_geometry(case, viewport_name, viewport_width, geometry):
         "following_gap": round(following_gap, 2),
         "columns": unique_columns,
         "horizontal_overflow": horizontal_overflow,
+        "hero_meta": hero_summary,
     }
 
 
@@ -226,6 +325,7 @@ def main():
                 print(
                     f"PASS {case['name']} {viewport_name}: "
                     f"columns={summary['columns']} "
+                    f"hero={summary['hero_meta']} "
                     f"gap={summary['following_gap']}px "
                     f"horizontal_overflow={summary['horizontal_overflow']}px"
                 )

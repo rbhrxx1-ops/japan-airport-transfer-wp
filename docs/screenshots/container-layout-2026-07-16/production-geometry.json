@@ -1,0 +1,1607 @@
+[
+  {
+    "page": "home",
+    "viewport": "desktop-1440",
+    "width": 1440,
+    "height": 1000,
+    "summary": {
+      "card_bottom": 1792.17,
+      "grid_bottom": 1792.17,
+      "following_gap": 179.41,
+      "columns": 4,
+      "horizontal_overflow": 0,
+      "hero_meta": {
+        "columns": 4,
+        "rows": 1,
+        "grid_template_columns": "168.391px 168.406px 168.406px 168.406px"
+      }
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 24,
+        "y": 1439.62,
+        "width": 1392,
+        "height": 352.55
+      },
+      "cards": [
+        {
+          "x": 24,
+          "y": 1439.62,
+          "width": 326.39,
+          "height": 352.55
+        },
+        {
+          "x": 379.19,
+          "y": 1439.62,
+          "width": 326.41,
+          "height": 352.55
+        },
+        {
+          "x": 734.39,
+          "y": 1439.62,
+          "width": 326.41,
+          "height": 352.55
+        },
+        {
+          "x": 1089.59,
+          "y": 1439.62,
+          "width": 326.41,
+          "height": 352.55
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "352.547px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "352.547px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "352.547px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "352.547px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        }
+      ],
+      "next": {
+        "x": 0,
+        "y": 1971.58,
+        "width": 1440,
+        "height": 788.97
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": 0
+      },
+      "hero_meta": {
+        "container": {
+          "x": 340,
+          "y": 714.66,
+          "width": 760,
+          "height": 98.7
+        },
+        "items": [
+          {
+            "x": 340,
+            "y": 739.66,
+            "width": 168.39,
+            "height": 73.7
+          },
+          {
+            "x": 537.19,
+            "y": 739.66,
+            "width": 168.41,
+            "height": 73.7
+          },
+          {
+            "x": 734.39,
+            "y": 739.66,
+            "width": 168.41,
+            "height": 73.7
+          },
+          {
+            "x": 931.59,
+            "y": 739.66,
+            "width": 168.41,
+            "height": 73.7
+          }
+        ],
+        "computed": {
+          "display": "grid",
+          "gridTemplateColumns": "168.391px 168.406px 168.406px 168.406px"
+        },
+        "item_overflow": [
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          }
+        ]
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/home-desktop-1440.png"
+  },
+  {
+    "page": "locations",
+    "viewport": "desktop-1440",
+    "width": 1440,
+    "height": 1000,
+    "summary": {
+      "card_bottom": 4668.11,
+      "grid_bottom": 4668.11,
+      "following_gap": 57.59,
+      "columns": 4,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 24,
+        "y": 4418.11,
+        "width": 1392,
+        "height": 250
+      },
+      "cards": [
+        {
+          "x": 24,
+          "y": 4418.11,
+          "width": 326.39,
+          "height": 250
+        },
+        {
+          "x": 379.19,
+          "y": 4418.11,
+          "width": 326.41,
+          "height": 250
+        },
+        {
+          "x": 734.39,
+          "y": 4418.11,
+          "width": 326.41,
+          "height": 250
+        },
+        {
+          "x": 1089.59,
+          "y": 4418.11,
+          "width": 326.41,
+          "height": 250
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "32px",
+          "paddingBottom": "32px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "32px",
+          "paddingBottom": "32px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "32px",
+          "paddingBottom": "32px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "32px",
+          "paddingBottom": "32px"
+        }
+      ],
+      "next": {
+        "x": 340,
+        "y": 4725.7,
+        "width": 760,
+        "height": 47.81
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/locations-desktop-1440.png"
+  },
+  {
+    "page": "service",
+    "viewport": "desktop-1440",
+    "width": 1440,
+    "height": 1000,
+    "summary": {
+      "card_bottom": 1237.73,
+      "grid_bottom": 1237.73,
+      "following_gap": 56.0,
+      "columns": 2,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/service/",
+      "grid": {
+        "x": 340,
+        "y": 666.67,
+        "width": 760,
+        "height": 571.06
+      },
+      "cards": [
+        {
+          "x": 340,
+          "y": 666.67,
+          "width": 370,
+          "height": 275.53
+        },
+        {
+          "x": 730,
+          "y": 666.67,
+          "width": 370,
+          "height": 275.53
+        },
+        {
+          "x": 340,
+          "y": 962.2,
+          "width": 370,
+          "height": 275.53
+        },
+        {
+          "x": 730,
+          "y": 962.2,
+          "width": 370,
+          "height": 275.53
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "275.531px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "275.531px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "275.531px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "275.531px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        }
+      ],
+      "next": {
+        "x": 340,
+        "y": 1293.73,
+        "width": 760,
+        "height": 30
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/service-desktop-1440.png"
+  },
+  {
+    "page": "home",
+    "viewport": "desktop-1280",
+    "width": 1280,
+    "height": 900,
+    "summary": {
+      "card_bottom": 1661.53,
+      "grid_bottom": 1661.53,
+      "following_gap": 169.0,
+      "columns": 4,
+      "horizontal_overflow": 0,
+      "hero_meta": {
+        "columns": 4,
+        "rows": 1,
+        "grid_template_columns": "170.797px 170.812px 170.797px 170.812px"
+      }
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 24,
+        "y": 1308.98,
+        "width": 1232,
+        "height": 352.55
+      },
+      "cards": [
+        {
+          "x": 24,
+          "y": 1308.98,
+          "width": 288.8,
+          "height": 352.55
+        },
+        {
+          "x": 338.39,
+          "y": 1308.98,
+          "width": 288.81,
+          "height": 352.55
+        },
+        {
+          "x": 652.8,
+          "y": 1308.98,
+          "width": 288.8,
+          "height": 352.55
+        },
+        {
+          "x": 967.19,
+          "y": 1308.98,
+          "width": 288.81,
+          "height": 352.55
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "352.547px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "352.547px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "352.547px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "352.547px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        }
+      ],
+      "next": {
+        "x": 0,
+        "y": 1830.53,
+        "width": 1280,
+        "height": 768.16
+      },
+      "document": {
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": 0
+      },
+      "hero_meta": {
+        "container": {
+          "x": 260,
+          "y": 668.92,
+          "width": 760,
+          "height": 98.7
+        },
+        "items": [
+          {
+            "x": 260,
+            "y": 693.92,
+            "width": 170.8,
+            "height": 73.7
+          },
+          {
+            "x": 456.39,
+            "y": 693.92,
+            "width": 170.81,
+            "height": 73.7
+          },
+          {
+            "x": 652.8,
+            "y": 693.92,
+            "width": 170.8,
+            "height": 73.7
+          },
+          {
+            "x": 849.19,
+            "y": 693.92,
+            "width": 170.81,
+            "height": 73.7
+          }
+        ],
+        "computed": {
+          "display": "grid",
+          "gridTemplateColumns": "170.797px 170.812px 170.797px 170.812px"
+        },
+        "item_overflow": [
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          }
+        ]
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/home-desktop-1280.png"
+  },
+  {
+    "page": "locations",
+    "viewport": "desktop-1280",
+    "width": 1280,
+    "height": 900,
+    "summary": {
+      "card_bottom": 4388.61,
+      "grid_bottom": 4388.61,
+      "following_gap": 51.19,
+      "columns": 4,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 24,
+        "y": 4138.61,
+        "width": 1232,
+        "height": 250
+      },
+      "cards": [
+        {
+          "x": 24,
+          "y": 4138.61,
+          "width": 288.8,
+          "height": 250
+        },
+        {
+          "x": 338.39,
+          "y": 4138.61,
+          "width": 288.81,
+          "height": 250
+        },
+        {
+          "x": 652.8,
+          "y": 4138.61,
+          "width": 288.8,
+          "height": 250
+        },
+        {
+          "x": 967.19,
+          "y": 4138.61,
+          "width": 288.81,
+          "height": 250
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "32px",
+          "paddingBottom": "32px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "32px",
+          "paddingBottom": "32px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "32px",
+          "paddingBottom": "32px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "32px",
+          "paddingBottom": "32px"
+        }
+      ],
+      "next": {
+        "x": 260,
+        "y": 4439.8,
+        "width": 760,
+        "height": 47.81
+      },
+      "document": {
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/locations-desktop-1280.png"
+  },
+  {
+    "page": "service",
+    "viewport": "desktop-1280",
+    "width": 1280,
+    "height": 900,
+    "summary": {
+      "card_bottom": 1196.91,
+      "grid_bottom": 1196.9,
+      "following_gap": 56.0,
+      "columns": 2,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/service/",
+      "grid": {
+        "x": 260,
+        "y": 625.84,
+        "width": 760,
+        "height": 571.06
+      },
+      "cards": [
+        {
+          "x": 260,
+          "y": 625.84,
+          "width": 370,
+          "height": 275.53
+        },
+        {
+          "x": 650,
+          "y": 625.84,
+          "width": 370,
+          "height": 275.53
+        },
+        {
+          "x": 260,
+          "y": 921.38,
+          "width": 370,
+          "height": 275.53
+        },
+        {
+          "x": 650,
+          "y": 921.38,
+          "width": 370,
+          "height": 275.53
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "275.531px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "275.531px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "275.531px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "275.531px",
+          "paddingTop": "36px",
+          "paddingBottom": "36px"
+        }
+      ],
+      "next": {
+        "x": 260,
+        "y": 1252.91,
+        "width": 760,
+        "height": 30
+      },
+      "document": {
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/service-desktop-1280.png"
+  },
+  {
+    "page": "home",
+    "viewport": "tablet-1024",
+    "width": 1024,
+    "height": 900,
+    "summary": {
+      "card_bottom": 1665.45,
+      "grid_bottom": 1665.45,
+      "following_gap": 152.05,
+      "columns": 4,
+      "horizontal_overflow": 0,
+      "hero_meta": {
+        "columns": 4,
+        "rows": 1,
+        "grid_template_columns": "174.641px 174.656px 174.641px 174.656px"
+      }
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 24,
+        "y": 1295.34,
+        "width": 976,
+        "height": 370.11
+      },
+      "cards": [
+        {
+          "x": 24,
+          "y": 1295.34,
+          "width": 228.64,
+          "height": 370.11
+        },
+        {
+          "x": 273.11,
+          "y": 1295.34,
+          "width": 228.66,
+          "height": 370.11
+        },
+        {
+          "x": 522.23,
+          "y": 1295.34,
+          "width": 228.64,
+          "height": 370.11
+        },
+        {
+          "x": 771.34,
+          "y": 1295.34,
+          "width": 228.66,
+          "height": 370.11
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "370.109px",
+          "paddingTop": "30.72px",
+          "paddingBottom": "30.72px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "370.109px",
+          "paddingTop": "30.72px",
+          "paddingBottom": "30.72px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "370.109px",
+          "paddingTop": "30.72px",
+          "paddingBottom": "30.72px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "370.109px",
+          "paddingTop": "30.72px",
+          "paddingBottom": "30.72px"
+        }
+      ],
+      "next": {
+        "x": 0,
+        "y": 1817.5,
+        "width": 1024,
+        "height": 759.64
+      },
+      "document": {
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "horizontalOverflow": 0
+      },
+      "hero_meta": {
+        "container": {
+          "x": 132,
+          "y": 645.7,
+          "width": 760,
+          "height": 98.7
+        },
+        "items": [
+          {
+            "x": 132,
+            "y": 670.7,
+            "width": 174.64,
+            "height": 73.7
+          },
+          {
+            "x": 327.11,
+            "y": 670.7,
+            "width": 174.66,
+            "height": 73.7
+          },
+          {
+            "x": 522.23,
+            "y": 670.7,
+            "width": 174.64,
+            "height": 73.7
+          },
+          {
+            "x": 717.34,
+            "y": 670.7,
+            "width": 174.66,
+            "height": 73.7
+          }
+        ],
+        "computed": {
+          "display": "grid",
+          "gridTemplateColumns": "174.641px 174.656px 174.641px 174.656px"
+        },
+        "item_overflow": [
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          }
+        ]
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/home-tablet-1024.png"
+  },
+  {
+    "page": "locations",
+    "viewport": "tablet-1024",
+    "width": 1024,
+    "height": 900,
+    "summary": {
+      "card_bottom": 4249.75,
+      "grid_bottom": 4249.75,
+      "following_gap": 48.0,
+      "columns": 4,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 24,
+        "y": 3991.36,
+        "width": 976,
+        "height": 258.39
+      },
+      "cards": [
+        {
+          "x": 24,
+          "y": 3991.36,
+          "width": 228.64,
+          "height": 258.39
+        },
+        {
+          "x": 273.11,
+          "y": 3991.36,
+          "width": 228.66,
+          "height": 258.39
+        },
+        {
+          "x": 522.23,
+          "y": 3991.36,
+          "width": 228.64,
+          "height": 258.39
+        },
+        {
+          "x": 771.34,
+          "y": 3991.36,
+          "width": 228.66,
+          "height": 258.39
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "258.391px",
+          "paddingTop": "25.6px",
+          "paddingBottom": "25.6px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "258.391px",
+          "paddingTop": "25.6px",
+          "paddingBottom": "25.6px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "258.391px",
+          "paddingTop": "25.6px",
+          "paddingBottom": "25.6px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "258.391px",
+          "paddingTop": "25.6px",
+          "paddingBottom": "25.6px"
+        }
+      ],
+      "next": {
+        "x": 132,
+        "y": 4297.75,
+        "width": 760,
+        "height": 47.25
+      },
+      "document": {
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/locations-tablet-1024.png"
+  },
+  {
+    "page": "service",
+    "viewport": "tablet-1024",
+    "width": 1024,
+    "height": 900,
+    "summary": {
+      "card_bottom": 1146.14,
+      "grid_bottom": 1146.14,
+      "following_gap": 56.0,
+      "columns": 2,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/service/",
+      "grid": {
+        "x": 132,
+        "y": 596.2,
+        "width": 760,
+        "height": 549.94
+      },
+      "cards": [
+        {
+          "x": 132,
+          "y": 596.2,
+          "width": 370,
+          "height": 264.97
+        },
+        {
+          "x": 522,
+          "y": 596.2,
+          "width": 370,
+          "height": 264.97
+        },
+        {
+          "x": 132,
+          "y": 881.17,
+          "width": 370,
+          "height": 264.97
+        },
+        {
+          "x": 522,
+          "y": 881.17,
+          "width": 370,
+          "height": 264.97
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "264.969px",
+          "paddingTop": "30.72px",
+          "paddingBottom": "30.72px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "264.969px",
+          "paddingTop": "30.72px",
+          "paddingBottom": "30.72px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "264.969px",
+          "paddingTop": "30.72px",
+          "paddingBottom": "30.72px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "264.969px",
+          "paddingTop": "30.72px",
+          "paddingBottom": "30.72px"
+        }
+      ],
+      "next": {
+        "x": 132,
+        "y": 1202.14,
+        "width": 760,
+        "height": 29.31
+      },
+      "document": {
+        "clientWidth": 1024,
+        "scrollWidth": 1024,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/service-tablet-1024.png"
+  },
+  {
+    "page": "home",
+    "viewport": "tablet-768",
+    "width": 768,
+    "height": 1024,
+    "summary": {
+      "card_bottom": 2025.21,
+      "grid_bottom": 2025.2,
+      "following_gap": 148.98,
+      "columns": 2,
+      "horizontal_overflow": 0,
+      "hero_meta": {
+        "columns": 2,
+        "rows": 2,
+        "grid_template_columns": "345.281px 345.281px"
+      }
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 30.72,
+        "y": 1404.89,
+        "width": 706.56,
+        "height": 620.31
+      },
+      "cards": [
+        {
+          "x": 30.72,
+          "y": 1404.89,
+          "width": 343.28,
+          "height": 300.16
+        },
+        {
+          "x": 394,
+          "y": 1404.89,
+          "width": 343.28,
+          "height": 300.16
+        },
+        {
+          "x": 30.72,
+          "y": 1725.05,
+          "width": 343.28,
+          "height": 300.16
+        },
+        {
+          "x": 394,
+          "y": 1725.05,
+          "width": 343.28,
+          "height": 300.16
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "300.156px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "300.156px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "300.156px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "300.156px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        }
+      ],
+      "next": {
+        "x": 0,
+        "y": 2174.19,
+        "width": 768,
+        "height": 905.3
+      },
+      "document": {
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": 0
+      },
+      "hero_meta": {
+        "container": {
+          "x": 30.72,
+          "y": 620,
+          "width": 706.56,
+          "height": 143.69
+        },
+        "items": [
+          {
+            "x": 30.72,
+            "y": 645,
+            "width": 345.28,
+            "height": 51.34
+          },
+          {
+            "x": 392,
+            "y": 645,
+            "width": 345.28,
+            "height": 51.34
+          },
+          {
+            "x": 30.72,
+            "y": 712.34,
+            "width": 345.28,
+            "height": 51.34
+          },
+          {
+            "x": 392,
+            "y": 712.34,
+            "width": 345.28,
+            "height": 51.34
+          }
+        ],
+        "computed": {
+          "display": "grid",
+          "gridTemplateColumns": "345.281px 345.281px"
+        },
+        "item_overflow": [
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          }
+        ]
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/home-tablet-768.png"
+  },
+  {
+    "page": "locations",
+    "viewport": "tablet-768",
+    "width": 768,
+    "height": 1024,
+    "summary": {
+      "card_bottom": 5462.2,
+      "grid_bottom": 5462.2,
+      "following_gap": 48.0,
+      "columns": 2,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 30.72,
+        "y": 4942.2,
+        "width": 706.56,
+        "height": 520
+      },
+      "cards": [
+        {
+          "x": 30.72,
+          "y": 4942.2,
+          "width": 343.28,
+          "height": 250
+        },
+        {
+          "x": 394,
+          "y": 4942.2,
+          "width": 343.28,
+          "height": 250
+        },
+        {
+          "x": 30.72,
+          "y": 5212.2,
+          "width": 343.28,
+          "height": 250
+        },
+        {
+          "x": 394,
+          "y": 5212.2,
+          "width": 343.28,
+          "height": 250
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        }
+      ],
+      "next": {
+        "x": 30.72,
+        "y": 5510.2,
+        "width": 706.56,
+        "height": 46.36
+      },
+      "document": {
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/locations-tablet-768.png"
+  },
+  {
+    "page": "service",
+    "viewport": "tablet-768",
+    "width": 768,
+    "height": 1024,
+    "summary": {
+      "card_bottom": 1087.36,
+      "grid_bottom": 1087.36,
+      "following_gap": 56.0,
+      "columns": 2,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/service/",
+      "grid": {
+        "x": 30.72,
+        "y": 564.3,
+        "width": 706.56,
+        "height": 523.06
+      },
+      "cards": [
+        {
+          "x": 30.72,
+          "y": 564.3,
+          "width": 343.28,
+          "height": 251.53
+        },
+        {
+          "x": 394,
+          "y": 564.3,
+          "width": 343.28,
+          "height": 251.53
+        },
+        {
+          "x": 30.72,
+          "y": 835.83,
+          "width": 343.28,
+          "height": 251.53
+        },
+        {
+          "x": 394,
+          "y": 835.83,
+          "width": 343.28,
+          "height": 251.53
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "251.531px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "251.531px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "251.531px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "251.531px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        }
+      ],
+      "next": {
+        "x": 30.72,
+        "y": 1143.36,
+        "width": 706.56,
+        "height": 28.2
+      },
+      "document": {
+        "clientWidth": 768,
+        "scrollWidth": 768,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/service-tablet-768.png"
+  },
+  {
+    "page": "home",
+    "viewport": "mobile-390",
+    "width": 390,
+    "height": 844,
+    "summary": {
+      "card_bottom": 2652.15,
+      "grid_bottom": 2652.16,
+      "following_gap": 168.41,
+      "columns": 1,
+      "horizontal_overflow": 0,
+      "hero_meta": {
+        "columns": 1,
+        "rows": 4,
+        "grid_template_columns": "358px"
+      }
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 16,
+        "y": 1393.66,
+        "width": 358,
+        "height": 1258.5
+      },
+      "cards": [
+        {
+          "x": 16,
+          "y": 1393.66,
+          "width": 358,
+          "height": 299.62
+        },
+        {
+          "x": 16,
+          "y": 1713.28,
+          "width": 358,
+          "height": 299.62
+        },
+        {
+          "x": 16,
+          "y": 2032.91,
+          "width": 358,
+          "height": 299.62
+        },
+        {
+          "x": 16,
+          "y": 2352.53,
+          "width": 358,
+          "height": 299.62
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "299.625px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "299.625px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "299.625px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "299.625px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        }
+      ],
+      "next": {
+        "x": 0,
+        "y": 2820.56,
+        "width": 390,
+        "height": 1147.61
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": 0
+      },
+      "hero_meta": {
+        "container": {
+          "x": 16,
+          "y": 684.09,
+          "width": 358,
+          "height": 273.55
+        },
+        "items": [
+          {
+            "x": 16,
+            "y": 709.09,
+            "width": 358,
+            "height": 51.34
+          },
+          {
+            "x": 16,
+            "y": 774.83,
+            "width": 358,
+            "height": 51.34
+          },
+          {
+            "x": 16,
+            "y": 840.56,
+            "width": 358,
+            "height": 51.34
+          },
+          {
+            "x": 16,
+            "y": 906.3,
+            "width": 358,
+            "height": 51.34
+          }
+        ],
+        "computed": {
+          "display": "grid",
+          "gridTemplateColumns": "358px"
+        },
+        "item_overflow": [
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          },
+          {
+            "horizontal": 0,
+            "vertical": 0
+          }
+        ]
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/home-mobile-390.png"
+  },
+  {
+    "page": "locations",
+    "viewport": "mobile-390",
+    "width": 390,
+    "height": 844,
+    "summary": {
+      "card_bottom": 7228.2,
+      "grid_bottom": 7228.2,
+      "following_gap": 48.0,
+      "columns": 1,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/",
+      "grid": {
+        "x": 16,
+        "y": 6168.2,
+        "width": 358,
+        "height": 1060
+      },
+      "cards": [
+        {
+          "x": 16,
+          "y": 6168.2,
+          "width": 358,
+          "height": 250
+        },
+        {
+          "x": 16,
+          "y": 6438.2,
+          "width": 358,
+          "height": 250
+        },
+        {
+          "x": 16,
+          "y": 6708.2,
+          "width": 358,
+          "height": 250
+        },
+        {
+          "x": 16,
+          "y": 6978.2,
+          "width": 358,
+          "height": 250
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "250px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        }
+      ],
+      "next": {
+        "x": 16,
+        "y": 7276.2,
+        "width": 358,
+        "height": 44.98
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/locations-mobile-390.png"
+  },
+  {
+    "page": "service",
+    "viewport": "mobile-390",
+    "width": 390,
+    "height": 844,
+    "summary": {
+      "card_bottom": 1626.73,
+      "grid_bottom": 1626.73,
+      "following_gap": 56.0,
+      "columns": 1,
+      "horizontal_overflow": 0,
+      "hero_meta": null
+    },
+    "geometry": {
+      "url": "https://meetandgreet.jp/service/",
+      "grid": {
+        "x": 16,
+        "y": 560.61,
+        "width": 358,
+        "height": 1066.12
+      },
+      "cards": [
+        {
+          "x": 16,
+          "y": 560.61,
+          "width": 358,
+          "height": 251.53
+        },
+        {
+          "x": 16,
+          "y": 832.14,
+          "width": 358,
+          "height": 251.53
+        },
+        {
+          "x": 16,
+          "y": 1103.67,
+          "width": 358,
+          "height": 251.53
+        },
+        {
+          "x": 16,
+          "y": 1375.2,
+          "width": 358,
+          "height": 251.53
+        }
+      ],
+      "computed_cards": [
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "251.531px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "251.531px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "251.531px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        },
+        {
+          "boxSizing": "border-box",
+          "cssHeight": "251.531px",
+          "paddingTop": "24px",
+          "paddingBottom": "24px"
+        }
+      ],
+      "next": {
+        "x": 16,
+        "y": 1682.73,
+        "width": 358,
+        "height": 26.56
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "horizontalOverflow": 0
+      }
+    },
+    "screenshot": "/home/ubuntu/japan-airport-transfer-wp/.runtime/container-layout-production/card-layout-final/service-mobile-390.png"
+  }
+]
